@@ -1,0 +1,662 @@
+Script started on 2026-08-17 16:10:33-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="153" LINES="16"]
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7mdate[27mdate
+[?2004lMon Aug 17 16:10:57 -03 2026
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7mwhoami[27mwhoami
+[?2004ldanilo
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7muname -a[27muname -a
+[?2004lLinux PC-Danilo 6.18.33.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun 18 21:54:43 UTC 2026 x86_64 GNU/Linux
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7mgit status[27mgit status
+[?2004lfatal: detected dubious ownership in repository at '/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7mgit config --global --add safe.directory /mnt/c/Users/U[27m[7ms[27m[7mer/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[27m[A]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ git config --global --add safe.directory /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-
+[?2004l[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7mpwd[27m
+[7mgit status[27m[A]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ pwd
+git status
+[?2004l/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   .gitignore[m
+	[31mmodified:   README.md[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31mevidencias.log[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7mgit diff -- .gitignore README.md[27mgit diff -- .gitignore README.md
+[?2004l[?1h=[1mdiff --git a/.gitignore b/.gitignore[m[m
+[1mindex 1f906ca..f4fd964 100644[m[m
+[1m--- a/.gitignore[m[m
+[1m+++ b/.gitignore[m[m
+[36m@@ -1,8 +1,8 @@[m[m
+[31m-processflow[m[m
+[31m-*.o[m[m
+[31m-*.out[m[m
+[31m-*.tmp[m[m
+[31m-*.swp[m[m
+[31m-*~[m[m
+[31m-.DS_Store[m[m
+[32m+[m[32mprocessflow[m[41m[7m^M[27m[m[m
+[32m+[m[32m*.o[m[41m[7m^M[27m[m[m
+[32m+[m[32m*.out[m[41m[7m^M[27m[m[m
+:[K[K[?1l>[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7mgit --no-pager diff --ignore-space-at-eol -- .gitignore[27m[7m [27m[7mREADME.md[27m[A]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ git --no-pager diff --ignore-space-at-eol -- .gitignore README.md
+[?2004l[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7mgit restore -- .gitignore README.md[27mgit restore -- .gitignore README.md
+[?2004l[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7mgit status[27mgit status
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31mevidencias.log[m
+
+nothing added to commit but untracked files present (use "git add" to track)
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7mcc --version[27m
+[7mmake --version[27m
+[7mgit --version[27m[A[A]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ cc --version
+make --version
+git --version
+[?2004lCommand 'cc' not found, but can be installed with:
+sudo apt install gcc
+Command 'make' not found, but can be installed with:
+sudo apt install make
+git version 2.53.0
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7msudo apt update[27msudo apt update
+[?2004l[sudo: authenticate] Password: *********         
+[33m0% [Working][0m            Get:1 http://security.ubuntu.com/ubuntu resolute-security InRelease [137 kB]
+[33m0% [Connecting to archive.ubuntu.com (91.189.92.22)] [1 InRelease 12.0 kB/137 kB 9%][0m                                                                                    Get:2 http://archive.ubuntu.com/ubuntu resolute InRelease [136 kB]
+[33m                                                                                    0% [2 InRelease 12.0 kB/136 kB 9%] [1 InRelease 46.4 kB/137 kB 34%][0m[33m                                                                   0% [2 InRelease 12.0 kB/136 kB 9%][0m[33m0% [2 InRelease 12.0 kB/136 kB 9%][0m                                  Get:3 http://security.ubuntu.com/ubuntu resolute-security/main amd64 Packages [387 kB]
+[33m0% [2 InRelease 30.4 kB/136 kB 22%] [3 Packages 9585 B/387 kB 2%][0m[33m                                                                 0% [2 InRelease 61.1 kB/136 kB 45%][0m[33m0% [3 Packages store 0 B] [2 InRelease 61.1 kB/136 kB 45%][0m[33m                                                          0% [2 InRelease 63.5 kB/136 kB 47%] [Waiting for headers][0m                                                         Get:4 http://security.ubuntu.com/ubuntu resolute-security/main Translation-en [92.4 kB]
+[33m0% [2 InRelease 80.7 kB/136 kB 60%] [4 Translation-en 7130 B/92.4 kB 8%][0m[33m                                                                        0% [2 InRelease 85.7 kB/136 kB 63%] [Waiting for headers][0m                                                         Get:5 http://security.ubuntu.com/ubuntu resolute-security/main amd64 Components [46.6 kB]
+[33m0% [2 InRelease 85.7 kB/136 kB 63%] [5 Components-amd64 7865 B/46.6 kB 17%][0m[33m0% [4 Translation-en store 0 B] [2 InRelease 85.7 kB/136 kB 63%] [5 Components-amd64 7865 B/46.6 kB 17%][0m[33m                                                                                                        0% [2 InRelease 88.1 kB/136 kB 65%] [5 Components-amd64 46.6 kB/46.6 kB 100%][0m[33m                                                                             0% [2 InRelease 88.1 kB/136 kB 65%] [Waiting for headers][0m                                                         Get:6 http://security.ubuntu.com/ubuntu resolute-security/main amd64 c-n-f Metadata [4616 B]
+[33m                                                         0% [2 InRelease 88.1 kB/136 kB 65%][0m[33m0% [5 Components-amd64 store 0 B] [2 InRelease 88.1 kB/136 kB 65%] [Waiting for headers][0m                                                                                        Get:7 http://security.ubuntu.com/ubuntu resolute-security/universe amd64 Packages [154 kB]
+[33m0% [5 Components-amd64 store 0 B] [2 InRelease 88.1 kB/136 kB 65%] [7 Packages 9645 B/154 kB 6%][0m[33m                                                                                                0% [2 InRelease 90.6 kB/136 kB 67%] [7 Packages 34.2 kB/154 kB 22%][0m[33m0% [6 Commands-amd64 store 0 B] [2 InRelease 90.6 kB/136 kB 67%] [7 Packages 34.2 kB/154 kB 22%][0m[33m                                                                                                0% [2 InRelease 90.6 kB/136 kB 67%] [7 Packages 34.2 kB/154 kB 22%][0m[33m                                                                   0% [2 InRelease 103 kB/136 kB 76%] [Waiting for headers][0m                                                        Get:8 http://security.ubuntu.com/ubuntu resolute-security/universe Translation-en [50.0 kB]
+[33m0% [2 InRelease 103 kB/136 kB 76%] [8 Translation-en 50.0 kB/50.0 kB 100%][0m[33m0% [7 Packages store 0 B] [2 InRelease 103 kB/136 kB 76%] [8 Translation-en 50.0 kB/50.0 kB 100%][0m[33m                                                                                                 0% [7 Packages store 0 B] [2 InRelease 103 kB/136 kB 76%][0m                                                         Get:9 http://security.ubuntu.com/ubuntu resolute-security/universe amd64 Components [43.2 kB]
+[33m0% [7 Packages store 0 B] [2 InRelease 103 kB/136 kB 76%] [9 Components-amd64 23.5 kB/43.2 kB 54%][0m[33m                                                                                                  0% [7 Packages store 0 B] [2 InRelease 105 kB/136 kB 78%] [Waiting for headers][0m                                                                               Get:10 http://security.ubuntu.com/ubuntu resolute-security/universe amd64 c-n-f Metadata [3552 B]
+[33m0% [7 Packages store 0 B] [2 InRelease 105 kB/136 kB 78%] [Waiting for headers][0m                                                                               Get:11 http://security.ubuntu.com/ubuntu resolute-security/restricted amd64 Packages [332 kB]
+[33m0% [7 Packages store 0 B] [2 InRelease 105 kB/136 kB 78%] [11 Packages 9254 B/332 kB 3%][0m[33m                                                                                        0% [2 InRelease 105 kB/136 kB 78%] [11 Packages 24.0 kB/332 kB 7%][0m[33m0% [8 Translation-en store 0 B] [2 InRelease 105 kB/136 kB 78%] [11 Packages 24.0 kB/332 kB 7%][0m[33m                                                                                               0% [2 InRelease 105 kB/136 kB 78%] [11 Packages 24.0 kB/332 kB 7%][0m[33m0% [9 Components-amd64 store 0 B] [2 InRelease 105 kB/136 kB 78%] [11 Packages 24.0 kB/332 kB 7%][0m[33m                                                                                                 0% [2 InRelease 109 kB/136 kB 80%] [11 Packages 83.5 kB/332 kB 25%][0m[33m0% [10 Commands-amd64 store 0 B] [2 InRelease 109 kB/136 kB 80%] [11 Packages 83.5 kB/332 kB 25%][0m[33m                                                                                                 0% [2 InRelease 109 kB/136 kB 80%] [11 Packages 83.5 kB/332 kB 25%][0m[33m                                                                   0% [11 Packages 332 kB/332 kB 100%][0m[33m0% [Waiting for headers] [Waiting for headers][0m                                              Get:12 http://security.ubuntu.com/ubuntu resolute-security/restricted Translation-en [64.1 kB]
+[33m0% [Waiting for headers] [12 Translation-en 4096 B/64.1 kB 6%][0m[33m0% [11 Packages store 0 B] [Waiting for headers] [12 Translation-en 4096 B/64.1 kB 6%][0m[33m0% [11 Packages store 0 B] [Waiting for headers] [12 Translation-en 64.1 kB/64.1 kB 100%][0m                                                                                         Get:13 http://security.ubuntu.com/ubuntu resolute-security/restricted amd64 c-n-f Metadata [396 B]
+[33m                                                                                         0% [11 Packages store 0 B] [Waiting for headers] [Waiting for headers][0m                                                                      Get:14 http://security.ubuntu.com/ubuntu resolute-security/multiverse amd64 Packages [9020 B]
+[33m0% [11 Packages store 0 B] [Waiting for headers] [14 Packages 9020 B/9020 B 100%][0m[33m                                                                                 0% [11 Packages store 0 B] [Waiting for headers] [Waiting for headers][0m[33m                                                                      0% [Waiting for headers] [Waiting for headers][0m[33m0% [12 Translation-en store 0 B] [Waiting for headers] [Waiting for headers][0m[33m                                                                            0% [Waiting for headers] [Waiting for headers][0m[33m0% [13 Commands-amd64 store 0 B] [Waiting for headers] [Waiting for headers][0m[33m                                                                            0% [Waiting for headers] [Waiting for headers][0m[33m0% [14 Packages store 0 B] [Waiting for headers] [Waiting for headers][0m[33m                                                                      0% [Waiting for headers] [Waiting for headers][0m                                              Get:15 http://security.ubuntu.com/ubuntu resolute-security/multiverse Translation-en [2660 B]
+[33m0% [Waiting for headers] [15 Translation-en 2660 B/2660 B 100%][0m                                                               Get:16 http://security.ubuntu.com/ubuntu resolute-security/multiverse amd64 Components [212 B]
+[33m                                                               0% [Waiting for headers] [Waiting for headers][0m                                              Get:17 http://security.ubuntu.com/ubuntu resolute-security/multiverse amd64 c-n-f Metadata [120 B]
+[33m                                              0% [Waiting for headers][0m[33m0% [15 Translation-en store 0 B] [Waiting for headers][0m[33m                                                      0% [Waiting for headers][0m[33m0% [16 Components-amd64 store 0 B] [Waiting for headers][0m[33m                                                        0% [Waiting for headers][0m[33m0% [17 Commands-amd64 store 0 B] [Waiting for headers][0m[33m                                                      0% [Waiting for headers][0m                        Get:18 http://archive.ubuntu.com/ubuntu resolute-updates InRelease [137 kB]
+[33m0% [18 InRelease 4604 B/137 kB 3%][0m[33m                                  0% [Working][0m[33m0% [Waiting for headers][0m                        Get:19 http://archive.ubuntu.com/ubuntu resolute-backports InRelease [136 kB]
+[33m0% [19 InRelease 2148 B/136 kB 2%][0m[33m                                  0% [Working][0m[33m17% [Waiting for headers][0m                         Get:20 http://archive.ubuntu.com/ubuntu resolute/main amd64 Packages [1480 kB]
+[33m17% [20 Packages 4671 B/1480 kB 0%][0m[33m19% [20 Packages 611 kB/1480 kB 41%][0m[33m                                    21% [Waiting for headers][0m                         Get:21 http://archive.ubuntu.com/ubuntu resolute/main Translation-en [524 kB]
+[33m21% [21 Translation-en 9052 B/524 kB 2%][0m[33m21% [20 Packages store 0 B] [21 Translation-en 9052 B/524 kB 2%][0m[33m                                                                22% [21 Translation-en 524 kB/524 kB 100%][0m[33m                                          22% [Waiting for headers][0m                         Get:22 http://archive.ubuntu.com/ubuntu resolute/main amd64 Components [395 kB]
+[33m22% [22 Components-amd64 6109 B/395 kB 2%][0m[33m22% [21 Translation-en store 0 B] [22 Components-amd64 6109 B/395 kB 2%][0m[33m                                                                        23% [22 Components-amd64 188 kB/395 kB 48%][0m[33m                                           23% [Waiting for headers][0m                         Get:23 http://archive.ubuntu.com/ubuntu resolute/main amd64 c-n-f Metadata [32.4 kB]
+[33m23% [23 Commands-amd64 12.0 kB/32.4 kB 37%][0m[33m23% [22 Components-amd64 store 0 B] [23 Commands-amd64 12.0 kB/32.4 kB 37%][0m[33m                                                                           23% [22 Components-amd64 store 0 B] [Waiting for headers][0m                                                         Get:24 http://archive.ubuntu.com/ubuntu resolute/universe amd64 Packages [16.0 MB]
+[33m23% [22 Components-amd64 store 0 B] [24 Packages 3921 B/16.0 MB 0%][0m[33m                                                                   25% [24 Packages 425 kB/16.0 MB 3%][0m[33m25% [23 Commands-amd64 store 0 B] [24 Packages 425 kB/16.0 MB 3%][0m[33m                                                                 25% [24 Packages 440 kB/16.0 MB 3%][0m[33m48% [24 Packages 10.2 MB/16.0 MB 64%][0m[33m                                     62% [Waiting for headers][0m                         Get:25 http://archive.ubuntu.com/ubuntu resolute/universe Translation-en [6329 kB]
+[33m62% [25 Translation-en 71.5 kB/6329 kB 1%][0m[33m62% [24 Packages store 0 B] [25 Translation-en 79.2 kB/6329 kB 1%][0m[33m                                                                  77% [24 Packages store 0 B] [Waiting for headers][0m                                                 Get:26 http://archive.ubuntu.com/ubuntu resolute/universe amd64 Components [4556 kB]
+[33m77% [24 Packages store 0 B] [26 Components-amd64 33.2 kB/4556 kB 1%][0m[33m                                                                    88% [24 Packages store 0 B][0m                           Get:27 http://archive.ubuntu.com/ubuntu resolute/universe amd64 c-n-f Metadata [313 kB]
+[33m88% [24 Packages store 0 B] [27 Commands-amd64 64.1 kB/313 kB 20%][0m[33m                                                                  88% [24 Packages store 0 B] [Waiting for headers][0m                                                 Get:28 http://archive.ubuntu.com/ubuntu resolute/restricted amd64 Packages [152 kB]
+[33m89% [24 Packages store 0 B] [28 Packages 70.6 kB/152 kB 46%][0m[33m                                                            89% [24 Packages store 0 B] [Waiting for headers][0m                                                 Get:29 http://archive.ubuntu.com/ubuntu resolute/restricted Translation-en [25.8 kB]
+[33m89% [24 Packages store 0 B] [29 Translation-en 25.8 kB/25.8 kB 100%][0m[33m                                                                    89% [24 Packages store 0 B][0m                           Get:30 http://archive.ubuntu.com/ubuntu resolute/restricted amd64 Components [556 B]
+[33m89% [24 Packages store 0 B] [30 Components-amd64 556 B/556 B 100%][0m[33m                                                                  89% [24 Packages store 0 B][0m                           Get:31 http://archive.ubuntu.com/ubuntu resolute/multiverse amd64 Packages [290 kB]
+[33m89% [24 Packages store 0 B] [31 Packages 30.9 kB/290 kB 11%][0m[33m                                                            90% [24 Packages store 0 B] [Waiting for headers][0m                                                 Get:32 http://archive.ubuntu.com/ubuntu resolute/multiverse Translation-en [127 kB]
+[33m90% [24 Packages store 0 B] [32 Translation-en 67.9 kB/127 kB 54%][0m[33m                                                                  90% [24 Packages store 0 B] [Waiting for headers][0m                                                 Get:33 http://archive.ubuntu.com/ubuntu resolute/multiverse amd64 Components [50.0 kB]
+[33m90% [24 Packages store 0 B] [33 Components-amd64 16.4 kB/50.0 kB 33%][0m[33m                                                                     90% [24 Packages store 0 B][0m                           Get:34 http://archive.ubuntu.com/ubuntu resolute/multiverse amd64 c-n-f Metadata [8276 B]
+[33m90% [24 Packages store 0 B] [34 Commands-amd64 8276 B/8276 B 100%][0m[33m                                                                  90% [24 Packages store 0 B] [Waiting for headers][0m                                                 Get:35 http://archive.ubuntu.com/ubuntu resolute-updates/main amd64 Packages [458 kB]
+[33m90% [24 Packages store 0 B] [35 Packages 65.3 kB/458 kB 14%][0m[33m                                                            91% [24 Packages store 0 B][0m                           Get:36 http://archive.ubuntu.com/ubuntu resolute-updates/main Translation-en [112 kB]
+[33m91% [24 Packages store 0 B] [36 Translation-en 32.8 kB/112 kB 29%][0m[33m                                                                  91% [24 Packages store 0 B] [Waiting for headers][0m                                                 Get:37 http://archive.ubuntu.com/ubuntu resolute-updates/main amd64 Components [97.8 kB]
+[33m91% [24 Packages store 0 B] [37 Components-amd64 44.2 kB/97.8 kB 45%][0m[33m                                                                     92% [24 Packages store 0 B] [Waiting for headers][0m                                                 Get:38 http://archive.ubuntu.com/ubuntu resolute-updates/main amd64 c-n-f Metadata [5756 B]
+[33m92% [24 Packages store 0 B] [Waiting for headers][0m                                                 Get:39 http://archive.ubuntu.com/ubuntu resolute-updates/universe amd64 Packages [237 kB]
+[33m92% [24 Packages store 0 B] [39 Packages 19.4 kB/237 kB 8%][0m[33m                                                           92% [24 Packages store 0 B] [Waiting for headers][0m                                                 Get:40 http://archive.ubuntu.com/ubuntu resolute-updates/universe Translation-en [77.8 kB]
+[33m92% [24 Packages store 0 B] [40 Translation-en 41.5 kB/77.8 kB 53%][0m[33m                                                                   92% [24 Packages store 0 B][0m                           Get:41 http://archive.ubuntu.com/ubuntu resolute-updates/universe amd64 Components [183 kB]
+[33m92% [24 Packages store 0 B] [41 Components-amd64 32.8 kB/183 kB 18%][0m[33m                                                                    93% [24 Packages store 0 B][0m                           Get:42 http://archive.ubuntu.com/ubuntu resolute-updates/universe amd64 c-n-f Metadata [4704 B]
+[33m93% [24 Packages store 0 B] [42 Commands-amd64 4704 B/4704 B 100%][0m[33m                                                                  93% [24 Packages store 0 B][0m                           Get:43 http://archive.ubuntu.com/ubuntu resolute-updates/restricted amd64 Packages [341 kB]
+[33m93% [24 Packages store 0 B] [43 Packages 65.3 kB/341 kB 19%][0m[33m                                                            94% [24 Packages store 0 B] [Waiting for headers][0m                                                 Get:44 http://archive.ubuntu.com/ubuntu resolute-updates/restricted Translation-en [65.7 kB]
+[33m94% [24 Packages store 0 B] [44 Translation-en 32.8 kB/65.7 kB 50%][0m[33m                                                                   94% [24 Packages store 0 B] [Waiting for headers][0m                                                 Get:45 http://archive.ubuntu.com/ubuntu resolute-updates/restricted amd64 c-n-f Metadata [392 B]
+                                                 Get:46 http://archive.ubuntu.com/ubuntu resolute-updates/multiverse amd64 Packages [11.3 kB]
+[33m94% [24 Packages store 0 B] [46 Packages 11.3 kB/11.3 kB 100%][0m[33m                                                              94% [24 Packages store 0 B] [Waiting for headers][0m                                                 Get:47 http://archive.ubuntu.com/ubuntu resolute-updates/multiverse Translation-en [3032 B]
+[33m94% [24 Packages store 0 B] [47 Translation-en 3032 B/3032 B 100%][0m[33m                                                                  94% [24 Packages store 0 B] [Waiting for headers][0m                                                 Get:48 http://archive.ubuntu.com/ubuntu resolute-updates/multiverse amd64 Components [216 B]
+[33m94% [24 Packages store 0 B] [48 Components-amd64 216 B/216 B 100%][0m[33m                                                                  94% [24 Packages store 0 B] [Waiting for headers][0m                                                 Get:49 http://archive.ubuntu.com/ubuntu resolute-updates/multiverse amd64 c-n-f Metadata [256 B]
+[33m94% [24 Packages store 0 B] [49 Commands-amd64 256 B/256 B 100%][0m                                                                Get:50 http://archive.ubuntu.com/ubuntu resolute-backports/main amd64 Components [212 B]
+[33m94% [24 Packages store 0 B] [50 Components-amd64 212 B/212 B 100%][0m                                                                  Get:51 http://archive.ubuntu.com/ubuntu resolute-backports/main amd64 c-n-f Metadata [112 B]
+[33m                                                                  94% [24 Packages store 0 B] [Waiting for headers][0m                                                 Get:52 http://archive.ubuntu.com/ubuntu resolute-backports/universe amd64 Packages [640 B]
+[33m94% [24 Packages store 0 B] [Waiting for headers][0m[33m                                                 94% [Waiting for headers][0m[33m94% [25 Translation-en store 0 B] [Waiting for headers][0m                                                       Get:53 http://archive.ubuntu.com/ubuntu resolute-backports/universe Translation-en [300 B]
+[33m94% [25 Translation-en store 0 B] [53 Translation-en 300 B/300 B 100%][0m                                                                      Get:54 http://archive.ubuntu.com/ubuntu resolute-backports/universe amd64 Components [216 B]
+[33m94% [25 Translation-en store 0 B] [54 Components-amd64 216 B/216 B 100%][0m                                                                        Get:55 http://archive.ubuntu.com/ubuntu resolute-backports/universe amd64 c-n-f Metadata [116 B]
+                                                                        Get:56 http://archive.ubuntu.com/ubuntu resolute-backports/restricted amd64 Components [216 B]
+[33m94% [25 Translation-en store 0 B] [56 Components-amd64 216 B/216 B 100%][0m                                                                        Get:57 http://archive.ubuntu.com/ubuntu resolute-backports/restricted amd64 c-n-f Metadata [120 B]
+[33m                                                                        94% [25 Translation-en store 0 B] [Waiting for headers][0m[33m                                                       94% [Waiting for headers][0m[33m94% [26 Components-amd64 store 0 B] [Waiting for headers][0m                                                         Get:58 http://archive.ubuntu.com/ubuntu resolute-backports/multiverse amd64 Components [216 B]
+[33m94% [26 Components-amd64 store 0 B] [58 Components-amd64 216 B/216 B 100%][0m                                                                          Get:59 http://archive.ubuntu.com/ubuntu resolute-backports/multiverse amd64 c-n-f Metadata [120 B]
+[33m                                                                          94% [26 Components-amd64 store 0 B] [59 Commands-amd64 120 B/120 B 100%][0m[33m                                                                        94% [26 Components-amd64 store 0 B][0m[33m94% [26 Components-amd64 store 0 B][0m[33m94% [Working]                                                                                                                               5440 kB/s 0s[0m[33m94% [27 Commands-amd64 store 0 B]                                                                                                           5440 kB/s 0s[0m[33m94% [Working]                                                                                                                               5440 kB/s 0s[0m[33m94% [28 Packages store 0 B]                                                                                                                 5440 kB/s 0s[0m[33m95% [Working]                                                                                                                               5440 kB/s 0s[0m[33m95% [29 Translation-en store 0 B]                                                                                                           5440 kB/s 0s[0m[33m95% [Working]                                                                                                                               5440 kB/s 0s[0m[33m95% [30 Components-amd64 store 0 B]                                                                                                         5440 kB/s 0s[0m[33m95% [Working]                                                                                                                               5440 kB/s 0s[0m[33m95% [31 Packages store 0 B]                                                                                                                 5440 kB/s 0s[0m[33m95% [Working]                                                                                                                               5440 kB/s 0s[0m[33m95% [32 Translation-en store 0 B]                                                                                                           5440 kB/s 0s[0m[33m95% [Working]                                                                                                                               5440 kB/s 0s[0m[33m95% [33 Components-amd64 store 0 B]                                                                                                         5440 kB/s 0s[0m[33m96% [Working]                                                                                                                               5440 kB/s 0s[0m[33m96% [34 Commands-amd64 store 0 B]                                                                                                           5440 kB/s 0s[0m[33m96% [Working]                                                                                                                               5440 kB/s 0s[0m[33m96% [35 Packages store 0 B]                                                                                                                 5440 kB/s 0s[0m[33m96% [Working]                                                                                                                               5440 kB/s 0s[0m[33m96% [36 Translation-en store 0 B]                                                                                                           5440 kB/s 0s[0m[33m96% [Working]                                                                                                                               5440 kB/s 0s[0m[33m96% [37 Components-amd64 store 0 B]                                                                                                         5440 kB/s 0s[0m[33m96% [Working]                                                                                                                               5440 kB/s 0s[0m[33m96% [38 Commands-amd64 store 0 B]                                                                                                           5440 kB/s 0s[0m[33m96% [Working]                                                                                                                               5440 kB/s 0s[0m[33m96% [39 Packages store 0 B]                                                                                                                 5440 kB/s 0s[0m[33m97% [Working]                                                                                                                               5440 kB/s 0s[0m[33m97% [40 Translation-en store 0 B]                                                                                                           5440 kB/s 0s[0m[33m97% [Working]                                                                                                                               5440 kB/s 0s[0m[33m97% [41 Components-amd64 store 0 B]                                                                                                         5440 kB/s 0s[0m[33m97% [Working]                                                                                                                               5440 kB/s 0s[0m[33m97% [42 Commands-amd64 store 0 B]                                                                                                           5440 kB/s 0s[0m[33m97% [Working]                                                                                                                               5440 kB/s 0s[0m[33m97% [43 Packages store 0 B]                                                                                                                 5440 kB/s 0s[0m[33m97% [Working]                                                                                                                               5440 kB/s 0s[0m[33m97% [44 Translation-en store 0 B]                                                                                                           5440 kB/s 0s[0m[33m97% [Working]                                                                                                                               5440 kB/s 0s[0m[33m97% [45 Commands-amd64 store 0 B]                                                                                                           5440 kB/s 0s[0m[33m98% [Working]                                                                                                                               5440 kB/s 0s[0m[33m98% [46 Packages store 0 B]                                                                                                                 5440 kB/s 0s[0m[33m98% [Working]                                                                                                                               5440 kB/s 0s[0m[33m98% [47 Translation-en store 0 B]                                                                                                           5440 kB/s 0s[0m[33m98% [Working]                                                                                                                               5440 kB/s 0s[0m[33m98% [48 Components-amd64 store 0 B]                                                                                                         5440 kB/s 0s[0m[33m98% [Working]                                                                                                                               5440 kB/s 0s[0m[33m98% [49 Commands-amd64 store 0 B]                                                                                                           5440 kB/s 0s[0m[33m98% [Working]                                                                                                                               5440 kB/s 0s[0m[33m98% [50 Components-amd64 store 0 B]                                                                                                         5440 kB/s 0s[0m[33m98% [Working]                                                                                                                               5440 kB/s 0s[0m[33m98% [51 Commands-amd64 store 0 B]                                                                                                           5440 kB/s 0s[0m[33m99% [Working]                                                                                                                               5440 kB/s 0s[0m[33m99% [52 Packages store 0 B]                                                                                                                 5440 kB/s 0s[0m[33m99% [Working]                                                                                                                               5440 kB/s 0s[0m[33m99% [53 Translation-en store 0 B]                                                                                                           5440 kB/s 0s[0m[33m99% [Working]                                                                                                                               5440 kB/s 0s[0m[33m99% [54 Components-amd64 store 0 B]                                                                                                         5440 kB/s 0s[0m[33m99% [Working]                                                                                                                               5440 kB/s 0s[0m[33m99% [55 Commands-amd64 store 0 B]                                                                                                           5440 kB/s 0s[0m[33m99% [Working]                                                                                                                               5440 kB/s 0s[0m[33m99% [56 Components-amd64 store 0 B]                                                                                                         5440 kB/s 0s[0m[33m99% [Working]                                                                                                                               5440 kB/s 0s[0m[33m99% [57 Commands-amd64 store 0 B]                                                                                                           5440 kB/s 0s[0m[33m100% [Working]                                                                                                                              5440 kB/s 0s[0m[33m100% [58 Components-amd64 store 0 B]                                                                                                        5440 kB/s 0s[0m[33m100% [Working]                                                                                                                              5440 kB/s 0s[0m[33m100% [59 Commands-amd64 store 0 B]                                                                                                          5440 kB/s 0s[0m[33m100% [Working]                                                                                                                              5440 kB/s 0s[0m                                                                                                                                                        Fetched 33.6 MB in 6s (5275 kB/s)
+Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 5%Reading package lists... 5%Reading package lists... 7%Reading package lists... 7%Reading package lists... 62%Reading package lists... 62%Reading package lists... 85%Reading package lists... 85%Reading package lists... 86%Reading package lists... 86%Reading package lists... 86%Reading package lists... 86%Reading package lists... 87%Reading package lists... 87%Reading package lists... 88%Reading package lists... 88%Reading package lists... 90%Reading package lists... 90%Reading package lists... 90%Reading package lists... 90%Reading package lists... 91%Reading package lists... 91%Reading package lists... 91%Reading package lists... 91%Reading package lists... 93%Reading package lists... 93%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 95%Reading package lists... 95%Reading package lists... 96%Reading package lists... 96%Reading package lists... 97%Reading package lists... 97%Reading package lists... 97%Reading package lists... 97%Reading package lists... 98%Reading package lists... 98%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%                             Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%                                Reading state information... 0%Reading state information... 0%                                [1m110 packages can be upgraded. Run 'apt list --upgradable' to see them.
+[0m[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7msudo apt install build-essential[27msudo apt install build-essential
+[?2004lReading package lists... 0%Reading package lists... 100%                              Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%                                Reading state information... 0%Reading state information... 0%                                Solving dependencies... 0%Solving dependencies... 10%                            Upgrading:
+[32m  libc-bin  libc-gconv-modules-extra  libc6  locales
+[0m
+Installing:
+[32m  build-essential
+[0m
+Installing dependencies:
+[32m  bzip2                    g++                      gcc-15-x86-64-linux-gnu    libc6-dev               libgomp1      libstdc++-15-dev   rpcsvc-proto
+  cpp                      g++-15                   gcc-x86-64-linux-gnu       libcc1-0                libhwasan0    libtsan2
+  cpp-15                   g++-15-x86-64-linux-gnu  libalgorithm-diff-perl     libcrypt-dev            libisl23      libubsan1
+  cpp-15-x86-64-linux-gnu  g++-x86-64-linux-gnu     libalgorithm-diff-xs-perl  libdpkg-perl            libitm1       linux-libc-dev
+  cpp-x86-64-linux-gnu     gcc                      libalgorithm-merge-perl    libfakeroot             liblsan0      lto-disabled-list
+  dpkg-dev                 gcc-15                   libasan8                   libfile-fcntllock-perl  libmpc3       make
+  fakeroot                 gcc-15-base              libc-dev-bin               libgcc-15-dev           libquadmath0  manpages-dev
+[0m
+Suggested packages:
+  bzip2-doc       cpp-15-doc                 g++-multilib     gcc-multilib  libtool  gdb              gdb-x86-64-linux-gnu  bzr
+  cpp-doc         debian-keyring             g++-15-multilib  autoconf      flex     gcc-doc          libc-devtools         libstdc++-15-doc
+  gcc-15-locales  debian-tag2upload-keyring  gcc-15-doc       automake      bison    gcc-15-multilib  glibc-doc             make-doc
+
+Summary:
+  Upgrading: 4, Installing: 44, Removing: 0, Not Upgrading: 106
+  Download size: 87.3 MB
+  Space needed: 274 MB / 1024 GB available
+
+Continue? [Y/n] y
+[33m0% [Working][0m            Get:1 http://archive.ubuntu.com/ubuntu resolute-updates/main amd64 libc-gconv-modules-extra amd64 2.43-2ubuntu2.3 [1362 kB]
+[33m0% [1 libc-gconv-modules-extra 12.0 kB/1362 kB 1%][0m[33m0% [1 libc-gconv-modules-extra 53.7 kB/1362 kB 4%][0m[33m0% [1 libc-gconv-modules-extra 250 kB/1362 kB 18%][0m[33m1% [1 libc-gconv-modules-extra 1207 kB/1362 kB 89%][0m[33m                                                   2% [Working][0m            Get:2 http://archive.ubuntu.com/ubuntu resolute-updates/main amd64 libc6 amd64 2.43-2ubuntu2.3 [2103 kB]
+[33m2% [2 libc6 15.7 kB/2103 kB 1%][0m[33m                               4% [Waiting for headers][0m                        Get:3 http://archive.ubuntu.com/ubuntu resolute-updates/main amd64 libc-bin amd64 2.43-2ubuntu2.3 [701 kB]
+[33m4% [3 libc-bin 10.7 kB/701 kB 2%][0m[33m                                 5% [Waiting for headers][0m                        Get:4 http://archive.ubuntu.com/ubuntu resolute-updates/main amd64 locales all 2.43-2ubuntu2.3 [4225 kB]
+[33m5% [4 locales 23.2 kB/4225 kB 1%][0m[33m                                 9% [Waiting for headers][0m                        Get:5 http://archive.ubuntu.com/ubuntu resolute-updates/main amd64 libc-dev-bin amd64 2.43-2ubuntu2.3 [23.3 kB]
+[33m9% [5 libc-dev-bin 10.8 kB/23.3 kB 46%][0m[33m                                       10% [Waiting for headers][0m                         Get:6 http://archive.ubuntu.com/ubuntu resolute-updates/main amd64 linux-libc-dev amd64 7.0.0-29.29 [1619 kB]
+[33m10% [6 linux-libc-dev 24.6 kB/1619 kB 2%][0m[33m                                         12% [Waiting for headers][0m                         Get:7 http://archive.ubuntu.com/ubuntu resolute/main amd64 rpcsvc-proto amd64 1.4.3-1build1 [68.3 kB]
+[33m12% [7 rpcsvc-proto 49.2 kB/68.3 kB 72%][0m[33m                                        12% [Working][0m             Get:8 http://archive.ubuntu.com/ubuntu resolute-updates/main amd64 libc6-dev amd64 2.43-2ubuntu2.3 [2295 kB]
+[33m12% [8 libc6-dev 51.7 kB/2295 kB 2%][0m[33m                                    15% [Waiting for headers][0m                         Get:9 http://archive.ubuntu.com/ubuntu resolute/main amd64 gcc-15-base amd64 15.2.0-16ubuntu1 [39.0 kB]
+[33m15% [9 gcc-15-base 16.3 kB/39.0 kB 42%][0m[33m                                       15% [Waiting for headers][0m                         Get:10 http://archive.ubuntu.com/ubuntu resolute/main amd64 libisl23 amd64 0.27-1build1 [691 kB]
+[33m15% [10 libisl23 42.5 kB/691 kB 6%][0m[33m                                   16% [Waiting for headers][0m                         Get:11 http://archive.ubuntu.com/ubuntu resolute/main amd64 libmpc3 amd64 1.3.1-3 [54.6 kB]
+[33m16% [11 libmpc3 43.1 kB/54.6 kB 79%][0m[33m                                    17% [Working][0m             Get:12 http://archive.ubuntu.com/ubuntu resolute/main amd64 cpp-15-x86-64-linux-gnu amd64 15.2.0-16ubuntu1 [12.9 MB]
+[33m17% [12 cpp-15-x86-64-linux-gnu 53.7 kB/12.9 MB 0%][0m[33m                                                   29% [Waiting for headers][0m                         Get:13 http://archive.ubuntu.com/ubuntu resolute/main amd64 cpp-15 amd64 15.2.0-16ubuntu1 [1030 B]
+                         Get:14 http://archive.ubuntu.com/ubuntu resolute/main amd64 cpp-x86-64-linux-gnu amd64 4:15.2.0-5ubuntu1 [5840 B]
+[33m29% [14 cpp-x86-64-linux-gnu 5840 B/5840 B 100%][0m                                                Get:15 http://archive.ubuntu.com/ubuntu resolute/main amd64 cpp amd64 4:15.2.0-5ubuntu1 [22.4 kB]
+[33m                                                30% [15 cpp 22.4 kB/22.4 kB 100%][0m[33m                                 30% [Working][0m             Get:16 http://archive.ubuntu.com/ubuntu resolute/main amd64 libcc1-0 amd64 16-20260322-1ubuntu1 [51.2 kB]
+[33m30% [16 libcc1-0 34.0 kB/51.2 kB 66%][0m[33m                                     31% [Waiting for headers][0m                         Get:17 http://archive.ubuntu.com/ubuntu resolute/main amd64 libgomp1 amd64 16-20260322-1ubuntu1 [162 kB]
+[33m31% [17 libgomp1 48.1 kB/162 kB 30%][0m[33m                                    31% [Waiting for headers][0m                         Get:18 http://archive.ubuntu.com/ubuntu resolute/main amd64 libitm1 amd64 16-20260322-1ubuntu1 [30.0 kB]
+[33m31% [18 libitm1 24.6 kB/30.0 kB 82%][0m[33m                                    32% [Waiting for headers][0m                         Get:19 http://archive.ubuntu.com/ubuntu resolute/main amd64 libasan8 amd64 16-20260322-1ubuntu1 [3184 kB]
+[33m32% [19 libasan8 47.6 kB/3184 kB 1%][0m[33m                                    35% [Waiting for headers][0m                         Get:20 http://archive.ubuntu.com/ubuntu resolute/main amd64 liblsan0 amd64 16-20260322-1ubuntu1 [1394 kB]
+[33m35% [20 liblsan0 69.7 kB/1394 kB 5%][0m[33m                                    37% [Waiting for headers][0m                         Get:21 http://archive.ubuntu.com/ubuntu resolute/main amd64 libtsan2 amd64 16-20260322-1ubuntu1 [2849 kB]
+[33m37% [21 libtsan2 37.7 kB/2849 kB 1%][0m[33m                                    40% [Waiting for headers][0m                         Get:22 http://archive.ubuntu.com/ubuntu resolute/main amd64 libubsan1 amd64 16-20260322-1ubuntu1 [1240 kB]
+[33m40% [22 libubsan1 29.3 kB/1240 kB 2%][0m[33m                                     41% [Waiting for headers][0m                         Get:23 http://archive.ubuntu.com/ubuntu resolute/main amd64 libhwasan0 amd64 16-20260322-1ubuntu1 [1731 kB]
+[33m41% [23 libhwasan0 70.2 kB/1731 kB 4%][0m[33m                                      43% [Waiting for headers][0m                         Get:24 http://archive.ubuntu.com/ubuntu resolute/main amd64 libquadmath0 amd64 16-20260322-1ubuntu1 [155 kB]
+[33m43% [24 libquadmath0 72.5 kB/155 kB 47%][0m[33m                                        44% [Waiting for headers][0m                         Get:25 http://archive.ubuntu.com/ubuntu resolute/main amd64 libgcc-15-dev amd64 15.2.0-16ubuntu1 [2866 kB]
+[33m44% [25 libgcc-15-dev 47.8 kB/2866 kB 2%][0m[33m                                         47% [Waiting for headers][0m                         Get:26 http://archive.ubuntu.com/ubuntu resolute/main amd64 gcc-15-x86-64-linux-gnu amd64 15.2.0-16ubuntu1 [25.4 MB]
+[33m47% [26 gcc-15-x86-64-linux-gnu 102 kB/25.4 MB 0%][0m[33m65% [26 gcc-15-x86-64-linux-gnu 20.1 MB/25.4 MB 79%][0m[33m                                                    71% [Waiting for headers][0m                         Get:27 http://archive.ubuntu.com/ubuntu resolute/main amd64 gcc-15 amd64 15.2.0-16ubuntu1 [539 kB]
+[33m71% [27 gcc-15 63.2 kB/539 kB 12%][0m[33m                                  72% [Waiting for headers][0m                         Get:28 http://archive.ubuntu.com/ubuntu resolute/main amd64 gcc-x86-64-linux-gnu amd64 4:15.2.0-5ubuntu1 [1208 B]
+                         Get:29 http://archive.ubuntu.com/ubuntu resolute/main amd64 gcc amd64 4:15.2.0-5ubuntu1 [5010 B]
+[33m72% [29 gcc 5010 B/5010 B 100%][0m                               Get:30 http://archive.ubuntu.com/ubuntu resolute/main amd64 libstdc++-15-dev amd64 15.2.0-16ubuntu1 [2920 kB]
+[33m72% [30 libstdc++-15-dev 65.2 kB/2920 kB 2%][0m[33m                                            75% [Waiting for headers][0m                         Get:31 http://archive.ubuntu.com/ubuntu resolute/main amd64 g++-15-x86-64-linux-gnu amd64 15.2.0-16ubuntu1 [14.4 MB]
+[33m76% [31 g++-15-x86-64-linux-gnu 64.4 kB/14.4 MB 0%][0m[33m85% [31 g++-15-x86-64-linux-gnu 9992 kB/14.4 MB 69%][0m[33m                                                    89% [Waiting for headers][0m                         Get:32 http://archive.ubuntu.com/ubuntu resolute/main amd64 g++-15 amd64 15.2.0-16ubuntu1 [26.7 kB]
+[33m89% [32 g++-15 26.7 kB/26.7 kB 100%][0m[33m                                    90% [Working][0m             Get:33 http://archive.ubuntu.com/ubuntu resolute/main amd64 g++-x86-64-linux-gnu amd64 4:15.2.0-5ubuntu1 [968 B]
+[33m90% [33 g++-x86-64-linux-gnu 968 B/968 B 100%][0m[33m                                              90% [Waiting for headers][0m                         Get:34 http://archive.ubuntu.com/ubuntu resolute/main amd64 g++ amd64 4:15.2.0-5ubuntu1 [1100 B]
+                         Get:35 http://archive.ubuntu.com/ubuntu resolute/main amd64 make amd64 4.4.1-3 [197 kB]
+[33m90% [35 make 49.2 kB/197 kB 25%][0m[33m                                91% [Waiting for headers][0m                         Get:36 http://archive.ubuntu.com/ubuntu resolute/main amd64 libdpkg-perl all 1.23.7ubuntu1 [289 kB]
+[33m91% [36 libdpkg-perl 64.9 kB/289 kB 22%][0m[33m                                        92% [Waiting for headers][0m                         Get:37 http://archive.ubuntu.com/ubuntu resolute/main amd64 bzip2 amd64 1.0.8-6build2 [34.3 kB]
+[33m92% [37 bzip2 34.3 kB/34.3 kB 100%][0m[33m                                   92% [Working][0m             Get:38 http://archive.ubuntu.com/ubuntu resolute/main amd64 lto-disabled-list all 79 [14.2 kB]
+[33m92% [38 lto-disabled-list 14.2 kB/14.2 kB 100%][0m[33m                                               93% [Waiting for headers][0m                         Get:39 http://archive.ubuntu.com/ubuntu resolute/main amd64 dpkg-dev all 1.23.7ubuntu1 [1062 kB]
+[33m93% [39 dpkg-dev 64.0 kB/1062 kB 6%][0m[33m                                    94% [Waiting for headers][0m                         Get:40 http://archive.ubuntu.com/ubuntu resolute/main amd64 libcrypt-dev amd64 1:4.5.1-1 [122 kB]
+[33m94% [40 libcrypt-dev 50.4 kB/122 kB 41%][0m[33m                                        94% [Waiting for headers][0m                         Get:41 http://archive.ubuntu.com/ubuntu resolute-updates/main amd64 build-essential amd64 12.12ubuntu2.26.04.2 [5158 B]
+[33m94% [41 build-essential 5158 B/5158 B 100%][0m[33m                                           95% [Waiting for headers][0m                         Get:42 http://archive.ubuntu.com/ubuntu resolute/main amd64 libfakeroot amd64 1.37.2-1 [34.0 kB]
+[33m95% [42 libfakeroot 34.0 kB/34.0 kB 100%][0m[33m                                         95% [Waiting for headers][0m                         Get:43 http://archive.ubuntu.com/ubuntu resolute/main amd64 fakeroot amd64 1.37.2-1 [68.3 kB]
+[33m95% [43 fakeroot 42.7 kB/68.3 kB 63%][0m[33m                                     96% [Waiting for headers][0m                         Get:44 http://archive.ubuntu.com/ubuntu resolute/main amd64 libalgorithm-diff-perl all 1.201-1 [41.8 kB]
+[33m96% [44 libalgorithm-diff-perl 30.4 kB/41.8 kB 73%][0m[33m                                                   96% [Working][0m             Get:45 http://archive.ubuntu.com/ubuntu resolute/main amd64 libalgorithm-diff-xs-perl amd64 0.04-9 [11.5 kB]
+[33m96% [45 libalgorithm-diff-xs-perl 11.5 kB/11.5 kB 100%][0m[33m                                                       97% [Waiting for headers][0m                         Get:46 http://archive.ubuntu.com/ubuntu resolute/main amd64 libalgorithm-merge-perl all 0.08-5 [11.4 kB]
+[33m97% [46 libalgorithm-merge-perl 11.4 kB/11.4 kB 100%][0m[33m                                                     97% [Waiting for headers][0m                         Get:47 http://archive.ubuntu.com/ubuntu resolute/main amd64 libfile-fcntllock-perl amd64 0.22-4ubuntu6 [32.8 kB]
+[33m97% [47 libfile-fcntllock-perl 16.4 kB/32.8 kB 50%][0m[33m                                                   98% [Waiting for headers][0m                         Get:48 http://archive.ubuntu.com/ubuntu resolute/main amd64 manpages-dev all 6.17-1 [2183 kB]
+[33m98% [48 manpages-dev 0 B/2183 kB 0%][0m[33m                                    100% [Working][0m              Fetched 87.3 MB in 6s (15.1 MB/s)
+Extracting templates from packages: 62%Extracting templates from packages: 100%
+Preconfiguring packages ...
+
+7[0;15r8[1A(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 35923 files and directories currently installed.)
+Preparing to unpack .../libc-gconv-modules-extra_2.43-2ubuntu2.3_amd64.deb ...
+7[16;0f[42m[30mProgress: [  0%][49m[39m [                                                                                                                                   ] 8Unpacking libc-gconv-modules-extra:amd64 (2.43-2ubuntu2.3) over (2.43-2ubuntu2) ...
+7[16;0f[42m[30mProgress: [  1%][49m[39m [█▎                                                                                                                                 ] 8Setting up libc-gconv-modules-extra:amd64 (2.43-2ubuntu2.3) ...
+7[16;0f[42m[30mProgress: [  2%][49m[39m [██▋                                                                                                                                ] 8(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 35923 files and directories currently installed.)
+Preparing to unpack .../libc6_2.43-2ubuntu2.3_amd64.deb ...
+Unpacking libc6:amd64 (2.43-2ubuntu2.3) over (2.43-2ubuntu2) ...
+7[16;0f[42m[30mProgress: [  3%][49m[39m [████                                                                                                                               ] 8Setting up libc6:amd64 (2.43-2ubuntu2.3) ...
+7[16;0f[42m[30mProgress: [  4%][49m[39m [█████▍                                                                                                                             ] 8(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 35923 files and directories currently installed.)
+Preparing to unpack .../libc-bin_2.43-2ubuntu2.3_amd64.deb ...
+Unpacking libc-bin (2.43-2ubuntu2.3) over (2.43-2ubuntu2) ...
+7[16;0f[42m[30mProgress: [  5%][49m[39m [██████▊                                                                                                                            ] 8Setting up libc-bin (2.43-2ubuntu2.3) ...
+7[16;0f[42m[30mProgress: [  6%][49m[39m [████████▏                                                                                                                          ] 8(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 35923 files and directories currently installed.)
+Preparing to unpack .../00-locales_2.43-2ubuntu2.3_all.deb ...
+Unpacking locales (2.43-2ubuntu2.3) over (2.43-2ubuntu2) ...
+7[16;0f[42m[30mProgress: [  7%][49m[39m [█████████▌                                                                                                                         ] 8Selecting previously unselected package libc-dev-bin.
+Preparing to unpack .../01-libc-dev-bin_2.43-2ubuntu2.3_amd64.deb ...
+Unpacking libc-dev-bin (2.43-2ubuntu2.3) ...
+7[16;0f[42m[30mProgress: [  8%][49m[39m [██████████▊                                                                                                                        ] 8Selecting previously unselected package linux-libc-dev:amd64.
+Preparing to unpack .../02-linux-libc-dev_7.0.0-29.29_amd64.deb ...
+Unpacking linux-libc-dev:amd64 (7.0.0-29.29) ...
+7[16;0f[42m[30mProgress: [  9%][49m[39m [████████████▏                                                                                                                      ] 8Selecting previously unselected package rpcsvc-proto.
+Preparing to unpack .../03-rpcsvc-proto_1.4.3-1build1_amd64.deb ...
+Unpacking rpcsvc-proto (1.4.3-1build1) ...
+7[16;0f[42m[30mProgress: [ 10%][49m[39m [█████████████▌                                                                                                                     ] 8Selecting previously unselected package libc6-dev:amd64.
+Preparing to unpack .../04-libc6-dev_2.43-2ubuntu2.3_amd64.deb ...
+Unpacking libc6-dev:amd64 (2.43-2ubuntu2.3) ...
+7[16;0f[42m[30mProgress: [ 11%][49m[39m [██████████████▉                                                                                                                    ] 8Selecting previously unselected package gcc-15-base:amd64.
+Preparing to unpack .../05-gcc-15-base_15.2.0-16ubuntu1_amd64.deb ...
+Unpacking gcc-15-base:amd64 (15.2.0-16ubuntu1) ...
+7[16;0f[42m[30mProgress: [ 12%][49m[39m [████████████████▎                                                                                                                  ] 8Selecting previously unselected package libisl23:amd64.
+Preparing to unpack .../06-libisl23_0.27-1build1_amd64.deb ...
+Unpacking libisl23:amd64 (0.27-1build1) ...
+7[16;0f[42m[30mProgress: [ 13%][49m[39m [█████████████████▍                                                                                                                 ] 8Selecting previously unselected package libmpc3:amd64.
+Preparing to unpack .../07-libmpc3_1.3.1-3_amd64.deb ...
+Unpacking libmpc3:amd64 (1.3.1-3) ...
+7[16;0f[42m[30mProgress: [ 14%][49m[39m [██████████████████▊                                                                                                                ] 8Selecting previously unselected package cpp-15-x86-64-linux-gnu.
+Preparing to unpack .../08-cpp-15-x86-64-linux-gnu_15.2.0-16ubuntu1_amd64.deb ...
+Unpacking cpp-15-x86-64-linux-gnu (15.2.0-16ubuntu1) ...
+7[16;0f[42m[30mProgress: [ 15%][49m[39m [████████████████████▏                                                                                                              ] 8Selecting previously unselected package cpp-15.
+Preparing to unpack .../09-cpp-15_15.2.0-16ubuntu1_amd64.deb ...
+Unpacking cpp-15 (15.2.0-16ubuntu1) ...
+7[16;0f[42m[30mProgress: [ 16%][49m[39m [█████████████████████▍                                                                                                             ] 8Selecting previously unselected package cpp-x86-64-linux-gnu.
+Preparing to unpack .../10-cpp-x86-64-linux-gnu_4%3a15.2.0-5ubuntu1_amd64.deb ...
+Unpacking cpp-x86-64-linux-gnu (4:15.2.0-5ubuntu1) ...
+7[16;0f[42m[30mProgress: [ 17%][49m[39m [██████████████████████▊                                                                                                            ] 8Selecting previously unselected package cpp.
+Preparing to unpack .../11-cpp_4%3a15.2.0-5ubuntu1_amd64.deb ...
+Unpacking cpp (4:15.2.0-5ubuntu1) ...
+7[16;0f[42m[30mProgress: [ 18%][49m[39m [████████████████████████▏                                                                                                          ] 8Selecting previously unselected package libcc1-0:amd64.
+Preparing to unpack .../12-libcc1-0_16-20260322-1ubuntu1_amd64.deb ...
+Unpacking libcc1-0:amd64 (16-20260322-1ubuntu1) ...
+7[16;0f[42m[30mProgress: [ 19%][49m[39m [█████████████████████████▌                                                                                                         ] 8Selecting previously unselected package libgomp1:amd64.
+Preparing to unpack .../13-libgomp1_16-20260322-1ubuntu1_amd64.deb ...
+7[16;0f[42m[30mProgress: [ 20%][49m[39m [██████████████████████████▏                                                                                                        ] 8Unpacking libgomp1:amd64 (16-20260322-1ubuntu1) ...
+Selecting previously unselected package libitm1:amd64.
+Preparing to unpack .../14-libitm1_16-20260322-1ubuntu1_amd64.deb ...
+7[16;0f[42m[30mProgress: [ 21%][49m[39m [███████████████████████████▌                                                                                                       ] 8Unpacking libitm1:amd64 (16-20260322-1ubuntu1) ...
+Selecting previously unselected package libasan8:amd64.
+Preparing to unpack .../15-libasan8_16-20260322-1ubuntu1_amd64.deb ...
+7[16;0f[42m[30mProgress: [ 22%][49m[39m [████████████████████████████▉                                                                                                      ] 8Unpacking libasan8:amd64 (16-20260322-1ubuntu1) ...
+Selecting previously unselected package liblsan0:amd64.
+Preparing to unpack .../16-liblsan0_16-20260322-1ubuntu1_amd64.deb ...
+7[16;0f[42m[30mProgress: [ 23%][49m[39m [██████████████████████████████▏                                                                                                    ] 8Unpacking liblsan0:amd64 (16-20260322-1ubuntu1) ...
+Selecting previously unselected package libtsan2:amd64.
+Preparing to unpack .../17-libtsan2_16-20260322-1ubuntu1_amd64.deb ...
+7[16;0f[42m[30mProgress: [ 24%][49m[39m [███████████████████████████████▌                                                                                                   ] 8Unpacking libtsan2:amd64 (16-20260322-1ubuntu1) ...
+Selecting previously unselected package libubsan1:amd64.
+Preparing to unpack .../18-libubsan1_16-20260322-1ubuntu1_amd64.deb ...
+7[16;0f[42m[30mProgress: [ 25%][49m[39m [████████████████████████████████▉                                                                                                  ] 8Unpacking libubsan1:amd64 (16-20260322-1ubuntu1) ...
+Selecting previously unselected package libhwasan0:amd64.
+Preparing to unpack .../19-libhwasan0_16-20260322-1ubuntu1_amd64.deb ...
+7[16;0f[42m[30mProgress: [ 26%][49m[39m [██████████████████████████████████▎                                                                                                ] 8Unpacking libhwasan0:amd64 (16-20260322-1ubuntu1) ...
+Selecting previously unselected package libquadmath0:amd64.
+Preparing to unpack .../20-libquadmath0_16-20260322-1ubuntu1_amd64.deb ...
+7[16;0f[42m[30mProgress: [ 27%][49m[39m [███████████████████████████████████▌                                                                                               ] 8Unpacking libquadmath0:amd64 (16-20260322-1ubuntu1) ...
+Selecting previously unselected package libgcc-15-dev:amd64.
+Preparing to unpack .../21-libgcc-15-dev_15.2.0-16ubuntu1_amd64.deb ...
+7[16;0f[42m[30mProgress: [ 28%][49m[39m [████████████████████████████████████▉                                                                                              ] 8Unpacking libgcc-15-dev:amd64 (15.2.0-16ubuntu1) ...
+Selecting previously unselected package gcc-15-x86-64-linux-gnu.
+Preparing to unpack .../22-gcc-15-x86-64-linux-gnu_15.2.0-16ubuntu1_amd64.deb ...
+7[16;0f[42m[30mProgress: [ 29%][49m[39m [██████████████████████████████████████▎                                                                                            ] 8Unpacking gcc-15-x86-64-linux-gnu (15.2.0-16ubuntu1) ...
+Selecting previously unselected package gcc-15.
+Preparing to unpack .../23-gcc-15_15.2.0-16ubuntu1_amd64.deb ...
+7[16;0f[42m[30mProgress: [ 30%][49m[39m [███████████████████████████████████████▋                                                                                           ] 8Unpacking gcc-15 (15.2.0-16ubuntu1) ...
+Selecting previously unselected package gcc-x86-64-linux-gnu.
+Preparing to unpack .../24-gcc-x86-64-linux-gnu_4%3a15.2.0-5ubuntu1_amd64.deb ...
+7[16;0f[42m[30mProgress: [ 31%][49m[39m [████████████████████████████████████████▉                                                                                          ] 8Unpacking gcc-x86-64-linux-gnu (4:15.2.0-5ubuntu1) ...
+Selecting previously unselected package gcc.
+Preparing to unpack .../25-gcc_4%3a15.2.0-5ubuntu1_amd64.deb ...
+7[16;0f[42m[30mProgress: [ 32%][49m[39m [██████████████████████████████████████████▎                                                                                        ] 8Unpacking gcc (4:15.2.0-5ubuntu1) ...
+Selecting previously unselected package libstdc++-15-dev:amd64.
+Preparing to unpack .../26-libstdc++-15-dev_15.2.0-16ubuntu1_amd64.deb ...
+7[16;0f[42m[30mProgress: [ 33%][49m[39m [███████████████████████████████████████████▋                                                                                       ] 8Unpacking libstdc++-15-dev:amd64 (15.2.0-16ubuntu1) ...
+Selecting previously unselected package g++-15-x86-64-linux-gnu.
+Preparing to unpack .../27-g++-15-x86-64-linux-gnu_15.2.0-16ubuntu1_amd64.deb ...
+7[16;0f[42m[30mProgress: [ 34%][49m[39m [█████████████████████████████████████████████                                                                                      ] 8Unpacking g++-15-x86-64-linux-gnu (15.2.0-16ubuntu1) ...
+Selecting previously unselected package g++-15.
+Preparing to unpack .../28-g++-15_15.2.0-16ubuntu1_amd64.deb ...
+7[16;0f[42m[30mProgress: [ 35%][49m[39m [██████████████████████████████████████████████▎                                                                                    ] 8Unpacking g++-15 (15.2.0-16ubuntu1) ...
+Selecting previously unselected package g++-x86-64-linux-gnu.
+Preparing to unpack .../29-g++-x86-64-linux-gnu_4%3a15.2.0-5ubuntu1_amd64.deb ...
+7[16;0f[42m[30mProgress: [ 36%][49m[39m [███████████████████████████████████████████████▋                                                                                   ] 8Unpacking g++-x86-64-linux-gnu (4:15.2.0-5ubuntu1) ...
+Selecting previously unselected package g++.
+Preparing to unpack .../30-g++_4%3a15.2.0-5ubuntu1_amd64.deb ...
+7[16;0f[42m[30mProgress: [ 37%][49m[39m [█████████████████████████████████████████████████                                                                                  ] 8Unpacking g++ (4:15.2.0-5ubuntu1) ...
+Selecting previously unselected package make.
+Preparing to unpack .../31-make_4.4.1-3_amd64.deb ...
+7[16;0f[42m[30mProgress: [ 38%][49m[39m [██████████████████████████████████████████████████▍                                                                                ] 8Unpacking make (4.4.1-3) ...
+Selecting previously unselected package libdpkg-perl.
+Preparing to unpack .../32-libdpkg-perl_1.23.7ubuntu1_all.deb ...
+7[16;0f[42m[30mProgress: [ 39%][49m[39m [███████████████████████████████████████████████████▋                                                                               ] 8Unpacking libdpkg-perl (1.23.7ubuntu1) ...
+7[16;0f[42m[30mProgress: [ 40%][49m[39m [████████████████████████████████████████████████████▍                                                                              ] 8Selecting previously unselected package bzip2.
+Preparing to unpack .../33-bzip2_1.0.8-6build2_amd64.deb ...
+Unpacking bzip2 (1.0.8-6build2) ...
+7[16;0f[42m[30mProgress: [ 41%][49m[39m [█████████████████████████████████████████████████████▋                                                                             ] 8Selecting previously unselected package lto-disabled-list.
+Preparing to unpack .../34-lto-disabled-list_79_all.deb ...
+Unpacking lto-disabled-list (79) ...
+7[16;0f[42m[30mProgress: [ 42%][49m[39m [███████████████████████████████████████████████████████                                                                            ] 8Selecting previously unselected package dpkg-dev.
+Preparing to unpack .../35-dpkg-dev_1.23.7ubuntu1_all.deb ...
+Unpacking dpkg-dev (1.23.7ubuntu1) ...
+7[16;0f[42m[30mProgress: [ 43%][49m[39m [████████████████████████████████████████████████████████▍                                                                          ] 8Selecting previously unselected package libcrypt-dev:amd64.
+Preparing to unpack .../36-libcrypt-dev_1%3a4.5.1-1_amd64.deb ...
+Unpacking libcrypt-dev:amd64 (1:4.5.1-1) ...
+7[16;0f[42m[30mProgress: [ 44%][49m[39m [█████████████████████████████████████████████████████████▊                                                                         ] 8Selecting previously unselected package build-essential.
+Preparing to unpack .../37-build-essential_12.12ubuntu2.26.04.2_amd64.deb ...
+Unpacking build-essential (12.12ubuntu2.26.04.2) ...
+7[16;0f[42m[30mProgress: [ 45%][49m[39m [███████████████████████████████████████████████████████████                                                                        ] 8Selecting previously unselected package libfakeroot:amd64.
+Preparing to unpack .../38-libfakeroot_1.37.2-1_amd64.deb ...
+Unpacking libfakeroot:amd64 (1.37.2-1) ...
+7[16;0f[42m[30mProgress: [ 46%][49m[39m [████████████████████████████████████████████████████████████▍                                                                      ] 8Selecting previously unselected package fakeroot.
+Preparing to unpack .../39-fakeroot_1.37.2-1_amd64.deb ...
+Unpacking fakeroot (1.37.2-1) ...
+7[16;0f[42m[30mProgress: [ 47%][49m[39m [█████████████████████████████████████████████████████████████▊                                                                     ] 8Selecting previously unselected package libalgorithm-diff-perl.
+Preparing to unpack .../40-libalgorithm-diff-perl_1.201-1_all.deb ...
+Unpacking libalgorithm-diff-perl (1.201-1) ...
+7[16;0f[42m[30mProgress: [ 48%][49m[39m [███████████████████████████████████████████████████████████████▏                                                                   ] 8Selecting previously unselected package libalgorithm-diff-xs-perl.
+Preparing to unpack .../41-libalgorithm-diff-xs-perl_0.04-9_amd64.deb ...
+Unpacking libalgorithm-diff-xs-perl (0.04-9) ...
+7[16;0f[42m[30mProgress: [ 49%][49m[39m [████████████████████████████████████████████████████████████████▍                                                                  ] 8Selecting previously unselected package libalgorithm-merge-perl.
+Preparing to unpack .../42-libalgorithm-merge-perl_0.08-5_all.deb ...
+Unpacking libalgorithm-merge-perl (0.08-5) ...
+7[16;0f[42m[30mProgress: [ 50%][49m[39m [█████████████████████████████████████████████████████████████████▊                                                                 ] 8Selecting previously unselected package libfile-fcntllock-perl.
+Preparing to unpack .../43-libfile-fcntllock-perl_0.22-4ubuntu6_amd64.deb ...
+Unpacking libfile-fcntllock-perl (0.22-4ubuntu6) ...
+7[16;0f[42m[30mProgress: [ 51%][49m[39m [███████████████████████████████████████████████████████████████████▏                                                               ] 8Selecting previously unselected package manpages-dev.
+Preparing to unpack .../44-manpages-dev_6.17-1_all.deb ...
+Unpacking manpages-dev (6.17-1) ...
+7[16;0f[42m[30mProgress: [ 52%][49m[39m [████████████████████████████████████████████████████████████████████▌                                                              ] 8Setting up manpages-dev (6.17-1) ...
+7[16;0f[42m[30mProgress: [ 53%][49m[39m [█████████████████████████████████████████████████████████████████████▊                                                             ] 8Setting up lto-disabled-list (79) ...
+7[16;0f[42m[30mProgress: [ 54%][49m[39m [███████████████████████████████████████████████████████████████████████▏                                                           ] 8Setting up libfile-fcntllock-perl (0.22-4ubuntu6) ...
+7[16;0f[42m[30mProgress: [ 55%][49m[39m [████████████████████████████████████████████████████████████████████████▌                                                          ] 8Setting up libalgorithm-diff-perl (1.201-1) ...
+7[16;0f[42m[30mProgress: [ 56%][49m[39m [█████████████████████████████████████████████████████████████████████████▉                                                         ] 8Setting up linux-libc-dev:amd64 (7.0.0-29.29) ...
+7[16;0f[42m[30mProgress: [ 57%][49m[39m [███████████████████████████████████████████████████████████████████████████▏                                                       ] 8Setting up libgomp1:amd64 (16-20260322-1ubuntu1) ...
+7[16;0f[42m[30mProgress: [ 58%][49m[39m [████████████████████████████████████████████████████████████████████████████▌                                                      ] 8Setting up bzip2 (1.0.8-6build2) ...
+7[16;0f[42m[30mProgress: [ 59%][49m[39m [█████████████████████████████████████████████████████████████████████████████▉                                                     ] 8Setting up locales (2.43-2ubuntu2.3) ...
+7[16;0f[42m[30mProgress: [ 60%][49m[39m [██████████████████████████████████████████████████████████████████████████████▌                                                    ] 8Generating locales (this might take a while)...
+Generation complete.
+Setting up libfakeroot:amd64 (1.37.2-1) ...
+7[16;0f[42m[30mProgress: [ 61%][49m[39m [███████████████████████████████████████████████████████████████████████████████▉                                                   ] 8Setting up fakeroot (1.37.2-1) ...
+7[16;0f[42m[30mProgress: [ 62%][49m[39m [█████████████████████████████████████████████████████████████████████████████████▎                                                 ] 8update-alternatives: using /usr/bin/fakeroot-sysv to provide /usr/bin/fakeroot (fakeroot) in auto mode
+Setting up rpcsvc-proto (1.4.3-1build1) ...
+7[16;0f[42m[30mProgress: [ 63%][49m[39m [██████████████████████████████████████████████████████████████████████████████████▋                                                ] 8Setting up make (4.4.1-3) ...
+7[16;0f[42m[30mProgress: [ 64%][49m[39m [███████████████████████████████████████████████████████████████████████████████████▉                                               ] 8Setting up libquadmath0:amd64 (16-20260322-1ubuntu1) ...
+7[16;0f[42m[30mProgress: [ 65%][49m[39m [█████████████████████████████████████████████████████████████████████████████████████▎                                             ] 8Setting up libmpc3:amd64 (1.3.1-3) ...
+7[16;0f[42m[30mProgress: [ 66%][49m[39m [██████████████████████████████████████████████████████████████████████████████████████▋                                            ] 8Setting up libdpkg-perl (1.23.7ubuntu1) ...
+7[16;0f[42m[30mProgress: [ 67%][49m[39m [████████████████████████████████████████████████████████████████████████████████████████                                           ] 8Setting up libubsan1:amd64 (16-20260322-1ubuntu1) ...
+7[16;0f[42m[30mProgress: [ 68%][49m[39m [█████████████████████████████████████████████████████████████████████████████████████████▎                                         ] 8Setting up libhwasan0:amd64 (16-20260322-1ubuntu1) ...
+7[16;0f[42m[30mProgress: [ 69%][49m[39m [██████████████████████████████████████████████████████████████████████████████████████████▋                                        ] 8Setting up libcrypt-dev:amd64 (1:4.5.1-1) ...
+7[16;0f[42m[30mProgress: [ 70%][49m[39m [████████████████████████████████████████████████████████████████████████████████████████████                                       ] 8Setting up libasan8:amd64 (16-20260322-1ubuntu1) ...
+7[16;0f[42m[30mProgress: [ 71%][49m[39m [█████████████████████████████████████████████████████████████████████████████████████████████▍                                     ] 8Setting up libtsan2:amd64 (16-20260322-1ubuntu1) ...
+7[16;0f[42m[30mProgress: [ 72%][49m[39m [██████████████████████████████████████████████████████████████████████████████████████████████▋                                    ] 8Setting up libisl23:amd64 (0.27-1build1) ...
+7[16;0f[42m[30mProgress: [ 73%][49m[39m [████████████████████████████████████████████████████████████████████████████████████████████████                                   ] 8Setting up libc-dev-bin (2.43-2ubuntu2.3) ...
+7[16;0f[42m[30mProgress: [ 74%][49m[39m [█████████████████████████████████████████████████████████████████████████████████████████████████▍                                 ] 8Setting up gcc-15-base:amd64 (15.2.0-16ubuntu1) ...
+7[16;0f[42m[30mProgress: [ 75%][49m[39m [██████████████████████████████████████████████████████████████████████████████████████████████████▊                                ] 8Setting up libalgorithm-diff-xs-perl (0.04-9) ...
+7[16;0f[42m[30mProgress: [ 76%][49m[39m [████████████████████████████████████████████████████████████████████████████████████████████████████                               ] 8Setting up libcc1-0:amd64 (16-20260322-1ubuntu1) ...
+7[16;0f[42m[30mProgress: [ 77%][49m[39m [█████████████████████████████████████████████████████████████████████████████████████████████████████▍                             ] 8Setting up liblsan0:amd64 (16-20260322-1ubuntu1) ...
+7[16;0f[42m[30mProgress: [ 78%][49m[39m [██████████████████████████████████████████████████████████████████████████████████████████████████████▊                            ] 8Setting up libitm1:amd64 (16-20260322-1ubuntu1) ...
+7[16;0f[42m[30mProgress: [ 79%][49m[39m [████████████████████████████████████████████████████████████████████████████████████████████████████████▏                          ] 87[16;0f[42m[30mProgress: [ 80%][49m[39m [████████████████████████████████████████████████████████████████████████████████████████████████████████▊                          ] 8Setting up libalgorithm-merge-perl (0.08-5) ...
+7[16;0f[42m[30mProgress: [ 81%][49m[39m [██████████████████████████████████████████████████████████████████████████████████████████████████████████▏                        ] 8Setting up libgcc-15-dev:amd64 (15.2.0-16ubuntu1) ...
+7[16;0f[42m[30mProgress: [ 82%][49m[39m [███████████████████████████████████████████████████████████████████████████████████████████████████████████▍                       ] 8Setting up cpp-15-x86-64-linux-gnu (15.2.0-16ubuntu1) ...
+7[16;0f[42m[30mProgress: [ 83%][49m[39m [████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                      ] 8Setting up dpkg-dev (1.23.7ubuntu1) ...
+7[16;0f[42m[30mProgress: [ 84%][49m[39m [██████████████████████████████████████████████████████████████████████████████████████████████████████████████▏                    ] 8Setting up gcc-15-x86-64-linux-gnu (15.2.0-16ubuntu1) ...
+7[16;0f[42m[30mProgress: [ 85%][49m[39m [███████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                   ] 8Setting up cpp-15 (15.2.0-16ubuntu1) ...
+7[16;0f[42m[30mProgress: [ 86%][49m[39m [████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                  ] 8Setting up libc6-dev:amd64 (2.43-2ubuntu2.3) ...
+7[16;0f[42m[30mProgress: [ 87%][49m[39m [██████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏                ] 8Setting up cpp-x86-64-linux-gnu (4:15.2.0-5ubuntu1) ...
+7[16;0f[42m[30mProgress: [ 88%][49m[39m [███████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌               ] 8Setting up gcc-x86-64-linux-gnu (4:15.2.0-5ubuntu1) ...
+7[16;0f[42m[30mProgress: [ 89%][49m[39m [████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉              ] 8Setting up gcc-15 (15.2.0-16ubuntu1) ...
+7[16;0f[42m[30mProgress: [ 90%][49m[39m [██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏            ] 8Setting up libstdc++-15-dev:amd64 (15.2.0-16ubuntu1) ...
+7[16;0f[42m[30mProgress: [ 91%][49m[39m [███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌           ] 8Setting up cpp (4:15.2.0-5ubuntu1) ...
+7[16;0f[42m[30mProgress: [ 92%][49m[39m [████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉          ] 8Setting up g++-15-x86-64-linux-gnu (15.2.0-16ubuntu1) ...
+7[16;0f[42m[30mProgress: [ 93%][49m[39m [██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎        ] 8Setting up gcc (4:15.2.0-5ubuntu1) ...
+7[16;0f[42m[30mProgress: [ 94%][49m[39m [███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌       ] 8Setting up g++-x86-64-linux-gnu (4:15.2.0-5ubuntu1) ...
+7[16;0f[42m[30mProgress: [ 95%][49m[39m [████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉      ] 8Setting up g++-15 (15.2.0-16ubuntu1) ...
+7[16;0f[42m[30mProgress: [ 96%][49m[39m [██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎    ] 8Setting up g++ (4:15.2.0-5ubuntu1) ...
+update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode
+7[16;0f[42m[30mProgress: [ 97%][49m[39m [███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋   ] 8Setting up build-essential (12.12ubuntu2.26.04.2) ...
+7[16;0f[42m[30mProgress: [ 98%][49m[39m [████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉  ] 8Processing triggers for systemd (259.5-0ubuntu3) ...
+Processing triggers for man-db (2.13.1-1build1) ...
+Processing triggers for libc-bin (2.43-2ubuntu2.3) ...
+7[16;0f[42m[30mProgress: [ 99%][49m[39m [██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎] 8
+7[0;16r8[1A[J[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7mcc --version[27m
+[7mmake --version[27m[A]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ cc --version
+make --version
+[?2004lcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0
+Copyright (C) 2025 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+GNU Make 4.4.1
+Built for x86_64-pc-linux-gnu
+Copyright (C) 1988-2023 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ (arg: 1) [K]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ git status
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31m.gitattributes[m
+	[31mevidencias.log[m
+
+nothing added to commit but untracked files present (use "git add" to track)
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7mcat .gitattributes[27mcat .gitattributes][K
+[?2004l* text=auto
+*.c text eol=lf
+*.h text eol=lf
+Makefile text eol=lf
+*.md text eol=lf
+*.pf text eol=lf[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7mgit add .gitattributes[27mgit add .gitattributes
+[?2004lwarning: in the working copy of '.gitattributes', CRLF will be replaced by LF the next time Git touches it
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7mgit status[27mgit status
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mnew file:   .gitattributes[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31mevidencias.log[m
+
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7mgit commit -m "configura finais de linha do projeto"[27mgit commit -m "configura finais de linha do projeto"
+[?2004lAuthor identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: empty ident name (for <danilo@PC-Danilo.localdomain>) not allowed
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7mgit config user.name "Danilo Araujo Duleba"[27m
+[7mgit config user.email "danduleba@gmail.com"[27m[A]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ git config user.name "Danilo Araujo Duleba"
+git config user.email "danduleba@gmail.com"
+[?2004lerror: chmod on /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-/.git/config.lock failed: Operation not permitted
+error: chmod on /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-/.git/config.lock failed: Operation not permitted
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7mgit config --global user.name "Danilo Araujo Duleba"[27mgit config --global user.name "Danilo Araujo Duleba"
+[?2004l[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7mgit config --global user.email "danduleba@gmail.com"[27mgit config --global user.email "danduleba@gmail.com"
+[?2004l[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7mgit config --global user.name[27m
+[7mgit config --global user.email[27m[A]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ git config --global user.name
+git config --global user.email
+[?2004lDanilo Araujo Duleba
+danduleba@gmail.com
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7mgit commit -m "configura finais de linha do projeto"[27mgit commit -m "configura finais de linha do projeto"
+[?2004l[main c557335] configura finais de linha do projeto
+ 1 file changed, 6 insertions(+)
+ create mode 100644 .gitattributes
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7mgit push[27mgit push
+[?2004lUsername for 'https://github.com': git status
+Password for 'https://git%20status@github.com': 
+[1]+  Stopped                    git push
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ git push
+[?2004lUsername for 'https://github.com': danduleba
+Password for 'https://danduleba@github.com': 
+remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Authentication failed for 'https://github.com/danduleba/Orquestrador-de-Processos--Infra-de-software-.git/'
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [K]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [K[A[K]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ ]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ git pushcommit -m "configura finais de linha do projeto"push[K[K]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ ]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ git push
+[?2004lUsername for 'https://github.com': danduleba@gmail.com
+Password for 'https://danduleba%40gmail.com@github.com': 
+remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Authentication failed for 'https://github.com/danduleba/Orquestrador-de-Processos--Infra-de-software-.git/'
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ git push
+[?2004lUsername for 'https://github.com': danduleba
+Password for 'https://danduleba@github.com': 
+remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Authentication failed for 'https://github.com/danduleba/Orquestrador-de-Processos--Infra-de-software-.git/'
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ git push
+[?2004lUsername for 'https://github.com': danduleba@GMAI    g gmail.com
+Password for 'https://danduleba%40gmail.com@github.com': 
+remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Authentication failed for 'https://github.com/danduleba/Orquestrador-de-Processos--Infra-de-software-.git/'
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7mgh --version[27mgh --version
+[?2004lCommand 'gh' not found, but can be installed with:
+sudo apt install gh
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7msudo apt install gh[27msudo apt install gh
+[?2004l[sudo: authenticate] Password: *********         
+Reading package lists... 0%Reading package lists... 100%                              Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%                                Reading state information... 0%Reading state information... 0%                                Solving dependencies... 0%Solving dependencies... 10%                            Installing:
+[32m  gh
+[0m
+Summary:
+  Upgrading: 0, Installing: 1, Removing: 0, Not Upgrading: 106
+  Download size: 8547 kB
+  Space needed: 37.1 MB / 1024 GB available
+
+[33m0% [Working][0m[33m0% [Connecting to archive.ubuntu.com][0m[33m                                     0% [Waiting for headers][0m                        Get:1 http://archive.ubuntu.com/ubuntu resolute/universe amd64 gh amd64 2.46.0-4 [8547 kB]
+[33m0% [1 gh 9530 B/8547 kB 0%][0m[33m0% [1 gh 43.9 kB/8547 kB 1%][0m[33m                            2% [1 gh 201 kB/8547 kB 2%][0m[33m9% [1 gh 923 kB/8547 kB 11%][0m[33m40% [1 gh 4282 kB/8547 kB 50%][0m[33m                              100% [Working][0m              Fetched 8547 kB in 3s (2508 kB/s)
+
+7[0;15r8[1ASelecting previously unselected package gh.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 42277 files and directories currently installed.)
+Preparing to unpack .../archives/gh_2.46.0-4_amd64.deb ...
+7[16;0f[42m[30mProgress: [  0%][49m[39m [                                                                                                                                   ] 87[16;0f[42m[30mProgress: [ 20%][49m[39m [██████████████████████████▏                                                                                                        ] 8Unpacking gh (2.46.0-4) ...
+7[16;0f[42m[30mProgress: [ 40%][49m[39m [████████████████████████████████████████████████████▍                                                                              ] 8Setting up gh (2.46.0-4) ...
+7[16;0f[42m[30mProgress: [ 60%][49m[39m [██████████████████████████████████████████████████████████████████████████████▌                                                    ] 87[16;0f[42m[30mProgress: [ 80%][49m[39m [████████████████████████████████████████████████████████████████████████████████████████████████████████▊                          ] 8Processing triggers for man-db (2.13.1-1build1) ...
+
+7[0;16r8[1A[J[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7mgh --version[27mgh --version
+[?2004lgh version 2.46.0 (2025-12-13 Ubuntu 2.46.0-4)
+https://github.com/cli/cli/releases/tag/v2.46.0
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7mgh auth login[27mgh auth login
+[?2004l7[?25l8[0G[2K[0;1;92m? [0m[0;1;99mWhat account do you want to log into?[0m  [0;36m[Use arrows to move, type to filter][0m
+[0;1;36m> GitHub.com[0m
+[0;39m  GitHub Enterprise Server[0m
+7[1A[0G[1A[0G8[?25h8[0G[2K[1A[0G[2K[1A[0G[2K[1A[0G[2K[0;1;92m? [0m[0;1;99mWhat account do you want to log into?[0m[0;36m GitHub.com[0m
+7[?25l8[0G[2K[0;1;92m? [0m[0;1;99mWhat is your preferred protocol for Git operations on this host?[0m  [0;36m[Use arrows to move, type to filter][0m
+[0;1;36m> HTTPS[0m
+[0;39m  SSH[0m
+7[1A[0G[1A[0G8[?25h8[0G[2K[1A[0G[2K[1A[0G[2K[1A[0G[2K[0;1;92m? [0m[0;1;99mWhat is your preferred protocol for Git operations on this host?[0m[0;36m HTTPS[0m
+[0G[2K[0;1;92m? [0m[0;1;99mAuthenticate Git with your GitHub credentials? [0m[0;39m(Y/n) [0m[?25l7[999;999f[6n8[?25h[6ny[1D[1B[0G[1A[0G[0G[2K[0;1;92m? [0m[0;1;99mAuthenticate Git with your GitHub credentials? [0m[0;36mYes[0m
+7[?25l8[0G[2K[0;1;92m? [0m[0;1;99mHow would you like to authenticate GitHub CLI?[0m  [0;36m[Use arrows to move, type to filter][0m
+[0;1;36m> Login with a web browser[0m
+[0;39m  Paste an authentication token[0m
+7[1A[0G[1A[0G8[?25h8[0G[2K[1A[0G[2K[1A[0G[2K[1A[0G[2K[0;1;92m? [0m[0;1;99mHow would you like to authenticate GitHub CLI?[0m[0;36m Login with a web browser[0m
+
+[0;33m![0m First copy your one-time code: [0;1;39m680B-DDAA[0m
+[0;1;39mPress Enter[0m to open github.com in your browser... 
+[0;31m![0m Failed opening a web browser at https://github.com/login/device
+  exec: "xdg-open,x-www-browser,www-browser,wslview": executable file not found in $PATH
+  Please try entering the URL in your browser manually
+[0;32m✓[0m Authentication complete.
+- gh config set -h github.com git_protocol https
+[0;32m✓[0m Configured git protocol
+[0;33m![0m Authentication credentials saved in plain text
+[0;32m✓[0m Logged in as [0;1;39mdanduleba[0m
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7mgh auth status[27mgh auth status
+[?2004l[0;1;39mgithub.com[0m
+  [0;32m✓[0m Logged in to github.com account [0;1;39mdanduleba[0m (/home/danilo/.config/gh/hosts.yml)
+  - Active account: [0;1;39mtrue[0m
+  - Git operations protocol: [0;1;39mhttps[0m
+  - Token: [0;1;39mgho_************************************[0m
+  - Token scopes: [0;1;39m'gist', 'read:org', 'repo', 'workflow'[0m
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7mgit push[27mgit push
+[?2004lEnumerating objects: 4, done.
+Counting objects:  25% (1/4)Counting objects:  50% (2/4)Counting objects:  75% (3/4)Counting objects: 100% (4/4)Counting objects: 100% (4/4), done.
+Delta compression using up to 12 threads
+Compressing objects:  33% (1/3)Compressing objects:  66% (2/3)Compressing objects: 100% (3/3)Compressing objects: 100% (3/3), done.
+Writing objects:  33% (1/3)Writing objects:  66% (2/3)Writing objects: 100% (3/3)Writing objects: 100% (3/3), 380 bytes | 22.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/danduleba/Orquestrador-de-Processos--Infra-de-software-.git
+   0e35e64..c557335  main -> main
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7mgit status[27mgit status
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31mevidencias.log[m
+
+nothing added to commit but untracked files present (use "git add" to track)
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [K]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [K[A[K]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ ]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7mmake[27mmake
+[?2004lmake: *** No targets specified and no makefile found.  Stop.
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7m./processflow[27m./processflow
+[?2004lbash: ./processflow: No such file or directory
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7mpwd[27m
+[7mls -la[27m[A]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ pwd
+ls -la
+[?2004l/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-
+total 128
+drwxrwxrwx 1 root root   4096 Aug 17 17:37 [0m[34;42m.[0m
+drwxrwxrwx 1 root root   4096 Aug 17 15:38 [34;42m..[0m
+drwxrwxrwx 1 root root   4096 Aug 17 17:30 [34;42m.git[0m
+-rwxrwxrwx 1 root root    103 Aug 17 17:01 [01;32m.gitattributes[0m
+-rwxrwxrwx 1 root root     55 Aug 17 16:53 [01;32m.gitignore[0m
+-rwxrwxrwx 1 root root    109 Aug 17 16:53 [01;32mREADME.md[0m
+-rwxrwxrwx 1 root root 122880 Aug 17 17:38 [01;32mevidencias.log[0m
+drwxrwxrwx 1 root root   4096 Aug 17 17:37 [34;42mscr[0m
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ ls -la
+[?2004ltotal 128
+drwxrwxrwx 1 root root   4096 Aug 17 17:37 [0m[34;42m.[0m
+drwxrwxrwx 1 root root   4096 Aug 17 15:38 [34;42m..[0m
+drwxrwxrwx 1 root root   4096 Aug 17 17:30 [34;42m.git[0m
+-rwxrwxrwx 1 root root    103 Aug 17 17:01 [01;32m.gitattributes[0m
+-rwxrwxrwx 1 root root     55 Aug 17 16:53 [01;32m.gitignore[0m
+-rwxrwxrwx 1 root root    109 Aug 17 16:53 [01;32mREADME.md[0m
+-rwxrwxrwx 1 root root 122880 Aug 17 17:38 [01;32mevidencias.log[0m
+drwxrwxrwx 1 root root   4096 Aug 17 17:37 [34;42mscr[0m
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7mls -la scr[27mls -la scr
+[?2004ltotal 0
+drwxrwxrwx 1 root root 4096 Aug 17 17:37 [0m[34;42m.[0m
+drwxrwxrwx 1 root root 4096 Aug 17 17:37 [34;42m..[0m
+-rwxrwxrwx 1 root root  496 Aug 17 18:29 [01;32mmain.c[0m
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7mmv scr src[27mmv scr src
+[?2004l[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7mmake[27mmake
+[?2004lcc -Wall -Wextra -pedantic -std=c11 src/main.c -o processflow
+[01m[Ksrc/main.c:[m[K In function ‘[01m[Kmain[m[K’:
+[01m[Ksrc/main.c:8:9:[m[K [01;31m[Kerror: [m[Kimplicit declaration of function ‘[01m[Kprointf[m[K’; did you mean ‘[01m[Kprintf[m[K’? [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wimplicit-function-declaration-Wimplicit-function-declaration]8;;[m[K]
+    8 |         [01;31m[Kprointf[m[K("processflow");
+      |         [01;31m[K^~~~~~~[m[K
+      |         [32m[Kprintf[m[K
+[01m[Ksrc/main.c:13:15:[m[K [01;31m[Kerror: [m[Ktoo few arguments to function ‘[01m[Kstrncmp[m[K’; expected 3, have 2
+   13 |         linha[[01;31m[Kstrncmp[m[K(linha, "\n")] = '\0';
+      |               [01;31m[K^~~~~~~[m[K
+In file included from [01m[Ksrc/main.c:2[m[K:
+[01m[K/usr/include/string.h:174:12:[m[K [01;36m[Knote: [m[Kdeclared here
+  174 | extern int [01;36m[Kstrncmp[m[K (const char *__s1, const char *__s2, size_t __n)
+      |            [01;36m[K^~~~~~~[m[K
+[01m[Ksrc/main.c:14:12:[m[K [01;31m[Kerror: [m[Ktoo few arguments to function ‘[01m[Kstrncmp[m[K’; expected 3, have 2
+   14 |         if([01;31m[Kstrncmp[m[K(linha, "exit") ==0){
+      |            [01;31m[K^~~~~~~[m[K
+[01m[K/usr/include/string.h:174:12:[m[K [01;36m[Knote: [m[Kdeclared here
+  174 | extern int [01;36m[Kstrncmp[m[K (const char *__s1, const char *__s2, size_t __n)
+      |            [01;36m[K^~~~~~~[m[K
+make: *** [Makefile:5: processflow] Error 1
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [K]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [K]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ make
+[?2004lcc -Wall -Wextra -pedantic -std=c11 src/main.c -o processflow
+[01m[Ksrc/main.c:[m[K In function ‘[01m[Kmain[m[K’:
+[01m[Ksrc/main.c:8:9:[m[K [01;31m[Kerror: [m[Kimplicit declaration of function ‘[01m[Kprointf[m[K’; did you mean ‘[01m[Kprintf[m[K’? [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wimplicit-function-declaration-Wimplicit-function-declaration]8;;[m[K]
+    8 |         [01;31m[Kprointf[m[K("processflow");
+      |         [01;31m[K^~~~~~~[m[K
+      |         [32m[Kprintf[m[K
+make: *** [Makefile:5: processflow] Error 1
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ make
+[?2004lcc -Wall -Wextra -pedantic -std=c11 src/main.c -o processflow
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ exit
+[?2004lexit
+There are stopped jobs.
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7mjobs[27mjobs
+[?2004l[1]+  Stopped                    git push
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7mfg %1[27mfg %1
+[?2004lgit push
+
+remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Authentication failed for 'https://github.com/danduleba/Orquestrador-de-Processos--Infra-de-software-.git/'
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [7mexit[27mexit
+[?2004lexit
+
+Script done on 2026-08-17 21:32:18-03:00 [COMMAND_EXIT_CODE="128"]
