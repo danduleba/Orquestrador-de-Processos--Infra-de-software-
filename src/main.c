@@ -1,6 +1,18 @@
 #include <stdio.h>
 #include <string.h>
 
+#define MAX_TAREFAS 100
+#define MAX_ARGS 20
+#define MAX_TEXTO 256
+
+typedef struct {
+    char nome[MAX_TEXTO];
+    char programa[MAX_TEXTO];
+    char argumentos[MAX_ARGS][MAX_TEXTO];
+    int qtd_argumentos;
+}Tarefa;
+
+
 int main(void){
     char linha[1024];
 
