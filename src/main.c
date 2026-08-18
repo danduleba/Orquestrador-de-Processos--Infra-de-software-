@@ -10,26 +10,64 @@ typedef struct {
     char programa[MAX_TEXTO];
     char argumentos[MAX_ARGS][MAX_TEXTO];
     int qtd_argumentos;
-}Tarefa;
-
+} Tarefa;
 
 int main(void){
     char linha[1024];
 
+    Tarefa tarefas[MAX_TAREFAS];
+    int qtd_tarefas = 0;
+
     while(1){
-        printf("processflow");
+        printf("processflow> ");
         fflush(stdout);
+
         if(fgets(linha, sizeof(linha), stdin) == NULL){
             break;
         }
+
         linha[strcspn(linha, "\n")] = '\0';
-        if(strcmp(linha, "exit") ==0){
+
+        if(strlen(linha) == 0){
+            continue;
+        }
+
+        char *comando = strtok(linha, " \t");
+
+        if(strcmp(comando, "exit") == 0){
             break;
         }
-        if (strlen(linha) == 0){
+        if(strcmp(comando, "task") == 0){
+
+            char *nome = strtok(NULL, "\t");
+            char *programa = strtok(NULL, "\t");
+
+            if(nome == NULL || programa == NULL){
+                printf("uso: task <nome> <programa> [argumentos...]\n");
                 continue;
+            }
+             if(qtd_tarefas >= MAX_TAREFAS){
+            printf("limite de tarefas atingido\n");
+            continue;        
+            }
+            strcpy(tarefas[qtd_tarefas].nome, nome);
+            strcpy(tarefas[qtd_tarefas].programa, programa);
+            tarefas[qtd_tarefas].qtd_argumentos = 0;
+            char *arg;
+            while ((arg = strtok(NULL,"\t")) !=NULL){
+              if(tarefas[qtd_tarefas].qtd_argumentos < MAX_ARGS){
+               strcpy(tarefas[qtd_tarefas].argumentos[tarefas[qtd_tarefas].qtd_argumentos],arg);
+               tarefas[qtd_tarefas].qtd_argumentos++;
+              }
+            }
+            
+     printf("tarefa '%s' cadastrada\n", nome);
+
+    qtd_tarefas++;
+
+    continue;
         }
-        printf("comando nao implementado: %s\n", linha);
     }
+
     return 0;
 }
