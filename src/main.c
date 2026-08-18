@@ -11,7 +11,8 @@ int main(void){
             break;
         }
         linha[strcspn(linha, "\n")] = '\0';
-        if(strcspn(linha, "exit") ==0){
+        if(strcmp(linha, "exit") ==0){
+            break;
         }
         if (strlen(linha) == 0){
                 continue;
