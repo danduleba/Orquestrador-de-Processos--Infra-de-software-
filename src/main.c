@@ -1,5 +1,9 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
 
 #define MAX_TAREFAS 100
 #define MAX_ARGS 20
@@ -60,6 +64,44 @@ int buscar_tarefa(Tarefa tarefas[], int qtd_tarefas, char nome[]) {
     return -1;
 }
 
+void executar_tarefa(Tarefa tarefas[], int qtd_tarefas){
+    char *nome = strtok(NULL, " \t");
+
+    if(nome==NULL){
+        printf("uso: run <nome>\n");
+        return;
+    }
+
+    int indice = buscar_tarefa(tarefas,qtd_tarefas,nome);
+
+    if(indice == -1){
+        printf("tarefa nao encontrada\n");
+        return;
+    }
+    pid_t pid = fork();
+    
+    if(pid<0){
+        printf("erro ao criar o processo\n");
+    }
+    else if(pid==0){
+        char *args[MAX_ARGS+2];
+        args[0]= tarefas[indice].programa;
+
+        for(int i=0; i<tarefas[indice].qtd_argumentos; i++){
+            args[i+1]=tarefas[indice].argumentos[i];
+        }
+        args[tarefas[indice].qtd_argumentos+1] ==NULL;
+
+        execvp(tarefas[indice].programa,args);
+        perror("execvp");
+        exit(1);
+    }
+    else{
+        waitpid(pid,NULL,0);
+    }
+}
+
+
 int main(void) {
 
     char linha[1024];
@@ -94,7 +136,13 @@ int main(void) {
 
             continue;
         }
+
+        if(strcmp(comando, "run") == 0){
+            executar_tarefa(tarefas,qtd_tarefas);
+            continue;
+        }
     }
+
 
     return 0;
 }
