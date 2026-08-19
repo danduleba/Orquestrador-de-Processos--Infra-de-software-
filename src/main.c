@@ -48,7 +48,17 @@ void cadastrar_tarefa(Tarefa tarefas[], int *qtd_tarefas) {
 
     (*qtd_tarefas)++;
 }
+int buscar_tarefa(Tarefa tarefas[], int qtd_tarefas, char nome[]) {
 
+    for(int i = 0; i < qtd_tarefas; i++) {
+
+        if(strcmp(tarefas[i].nome, nome) == 0) {
+            return i;
+        }
+    }
+
+    return -1;
+}
 
 int main(void) {
 
