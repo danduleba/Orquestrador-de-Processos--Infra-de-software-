@@ -660,3 +660,49 @@ fatal: Authentication failed for 'https://github.com/danduleba/Orquestrador-de-P
 [?2004lexit
 
 Script done on 2026-08-17 21:32:18-03:00 [COMMAND_EXIT_CODE="128"]
+Script started on 2026-08-20 16:54:24-03:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="229" LINES="19"]
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ git status
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   src/main.c[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ git add. 
+[?2004lgit: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+	add
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ git add. status[2Ppushcommit -m "Implementa cadastro de tarefas"[28Padd src/main.c
+[?2004l[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ git add src/main.c. [Kstatus[2Ppushcommit -m "Implementa cadastro de tarefas"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"i"m"p"l"e"m"e"n"t"a"ç"ã"o" "d"a" "f"u"n"ç"ã"o" "s"e"q"u"e"n"c"i"a"l" "e" "v"e"r"i"f"i"c"a"ç"ã"o" "d"e" "s"e"u" "u"s"o" "n"a" "t"a"r"e"f"a"
+[?2004l[main 206858b] implementação da função sequencial e verificação de seu uso na tarefa
+ 1 file changed, 28 insertions(+), 14 deletions(-)
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ git commit -m "implementação da função sequencial e verificação de seu uso na tarefa"add src/main.c[K. [Kstatus[2Ppush
+[?2004lEnumerating objects: 7, done.
+Counting objects:  14% (1/7)Counting objects:  28% (2/7)Counting objects:  42% (3/7)Counting objects:  57% (4/7)Counting objects:  71% (5/7)Counting objects:  85% (6/7)Counting objects: 100% (7/7)Counting objects: 100% (7/7), done.
+Delta compression using up to 12 threads
+Compressing objects:  33% (1/3)Compressing objects:  66% (2/3)Compressing objects: 100% (3/3)Compressing objects: 100% (3/3), done.
+Writing objects:  25% (1/4)Writing objects:  50% (2/4)Writing objects:  75% (3/4)Writing objects: 100% (4/4)Writing objects: 100% (4/4), 638 bytes | 49.00 KiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas:   0% (0/2)[Kremote: Resolving deltas:  50% (1/2)[Kremote: Resolving deltas: 100% (2/2)[Kremote: Resolving deltas: 100% (2/2), completed with 2 local objects.[K
+To https://github.com/danduleba/Orquestrador-de-Processos--Infra-de-software-.git
+   e7b9b2b..206858b  main -> main
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [K]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [K]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ git stats[Kus [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ks
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   evidencias.log[m
+	[31mmodified:   src/main.c[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ git status [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2Ppush
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccommit -m "implementação da função sequencial e verificação de seu uso na tarefa"[A]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [C[C[C[Cadd src/main.c[K[A]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [C[C[C[C[C[C[C[1P. 
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cstatus [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2Ppush
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccommit -m "Implementa cadastro de tarefas"[A]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[00m$ [C[C[C[Cadd src/main.c[K
+[?2004l[?2004h]0;danilo@PC-Danilo: /mnt/c/Users/User/Desktop/atv1-so/Orquestrador-de-Processos--Infra-de-software-[01;32mdanilo@PC-Danilo[00m:[01;34m/m

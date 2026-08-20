@@ -110,6 +110,47 @@ void executar_sequencial(Tarefa tarefas[], int qtd_tarefas){
     }
 }
 
+void executar_paralelo(Tarefa tarefas[], int qtd_tarefas){
+    char *nome;
+    int quantidade =0;
+
+    while ((nome = strtok(NULL, " \t")) != NULL){
+        quantidade++;
+        int indice=buscar_tarefa(tarefas,qtd_tarefas,nome);
+        
+        if (indice == -1){
+            printf("tarefa '%s' nao encontrada\n", nome);
+            return;
+        }
+        pid_t pid = fork();
+
+        if(pid<0){
+            printf("erro ao criar processo\n");
+        }
+        else if(pid == 0){
+            char *args[MAX_ARGS+2];
+            args[0]= tarefas[indice].programa;
+
+            for(int i - 0; i< tarefas[indice].qtd_argumentos; i++){
+                args[i + 1]= tarefas[indice].argumentos[i];
+            }
+            args[tarefas[indice].qtd_argumentos+1]= NULL;
+            execvp(tarefas[indice].programa,args);
+
+            perror("execvp");
+            exit(1);
+        }
+        else{
+            waitpid(pid,NULL,0);
+        }
+
+    }
+    if(quantidade == 0){
+        printf("uso: run parallel <tarefa1> <tarefa2> ...\n";)
+    }
+}
+
+
 
 void executar_tarefa(Tarefa tarefas[], int qtd_tarefas){
     char *nome = strtok(NULL, " \t");
@@ -123,6 +164,11 @@ void executar_tarefa(Tarefa tarefas[], int qtd_tarefas){
         executar_sequencial(tarefas, qtd_tarefas);
         return;
     }
+    if(strcmp(nome, "parallel") ==0){
+        executar_paralelo(tarefas, qtd_tarefas);
+        return;
+    }
+
     int indice = buscar_tarefa(tarefas,qtd_tarefas,nome);
     if (indice ==-1){
         printf("tarefa não encontrada\n");
