@@ -64,7 +64,7 @@ int buscar_tarefa(Tarefa tarefas[], int qtd_tarefas, char nome[]) {
     return -1;
 }
 
-void executar_tarefa(Tarefa tarefas[], int qtd_tarefas){
+void executar_indice(Tarefa tarefas[], int qtd_tarefas){
     char *nome = strtok(NULL, " \t");
 
     if(nome==NULL){
@@ -90,7 +90,7 @@ void executar_tarefa(Tarefa tarefas[], int qtd_tarefas){
         for(int i=0; i<tarefas[indice].qtd_argumentos; i++){
             args[i+1]=tarefas[indice].argumentos[i];
         }
-        args[tarefas[indice].qtd_argumentos+1] ==NULL;
+        args[tarefas[indice].qtd_argumentos+1] = NULL;
 
         execvp(tarefas[indice].programa,args);
         perror("execvp");
