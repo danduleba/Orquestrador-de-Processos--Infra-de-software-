@@ -64,20 +64,8 @@ int buscar_tarefa(Tarefa tarefas[], int qtd_tarefas, char nome[]) {
     return -1;
 }
 
-void executar_indice(Tarefa tarefas[], int qtd_tarefas){
-    char *nome = strtok(NULL, " \t");
-
-    if(nome==NULL){
-        printf("uso: run <nome>\n");
-        return;
-    }
-
-    int indice = buscar_tarefa(tarefas,qtd_tarefas,nome);
-
-    if(indice == -1){
-        printf("tarefa nao encontrada\n");
-        return;
-    }
+void executar_indice(Tarefa tarefas[], int indice){
+    
     pid_t pid = fork();
     
     if(pid<0){
@@ -101,12 +89,38 @@ void executar_indice(Tarefa tarefas[], int qtd_tarefas){
     }
 }
 
+void executar_sequencial(Tarefa tarefas[], int qtd_tarefas){
+
+    char *nome;
+    int quantidade = 0;
+
+    while((nome = strtok(NULL, " \t")) != NULL){
+
+        quantidade++;
+
+        int indice= buscar_tarefa(tarefas,qtd_tarefas,nome);
+
+        if(indice == -1){
+            printf("tarefa '%s' nao encontrada\n", nome);
+        }
+        executar_indice(tarefas,indice);
+    }
+    if(quantidade == 0){
+        printf("uso: run sequential <tarefa1> <tarefa2> ...\n");
+    }
+}
+
 
 void executar_tarefa(Tarefa tarefas[], int qtd_tarefas){
     char *nome = strtok(NULL, " \t");
 
     if(nome == NULL){
         printf("uso: run <nome>\n");
+        return;
+    }
+
+    if(strcmp(nome, "sequential") ==0){
+        executar_sequencial(tarefas, qtd_tarefas);
         return;
     }
     int indice = buscar_tarefa(tarefas,qtd_tarefas,nome);
