@@ -131,7 +131,7 @@ void executar_paralelo(Tarefa tarefas[], int qtd_tarefas){
             char *args[MAX_ARGS+2];
             args[0]= tarefas[indice].programa;
 
-            for(int i - 0; i< tarefas[indice].qtd_argumentos; i++){
+            for(int i = 0; i< tarefas[indice].qtd_argumentos; i++){
                 args[i + 1]= tarefas[indice].argumentos[i];
             }
             args[tarefas[indice].qtd_argumentos+1]= NULL;
@@ -146,11 +146,128 @@ void executar_paralelo(Tarefa tarefas[], int qtd_tarefas){
 
     }
     if(quantidade == 0){
-        printf("uso: run parallel <tarefa1> <tarefa2> ...\n";)
+        printf("uso: run parallel <tarefa1> <tarefa2> ...\n");
     }
 }
 
+void executar_pipe(Tarefa tarefas[], int qtd_tarefas){
 
+    int indices[MAX_TAREFAS];
+    pid_t pids[MAX_TAREFAS];
+
+    int quantidade = 0;
+
+    char *nome;
+
+    while((nome = strtok(NULL, " \t")) != NULL){
+
+        int indice = buscar_tarefa(tarefas,qtd_tarefas,nome);
+
+        if(indice == -1){
+            printf("tarefa '%s' nao encontrada\n", nome);
+            return;
+        }
+
+        indices[quantidade] = indice;
+        quantidade++;
+    }
+
+    if(quantidade < 2){
+        printf("uso: run pipe <tarefa1> <tarefa2> ...\n");
+        return;
+    }
+
+    int leitura_anterior = -1;
+
+    for(int i = 0; i < quantidade; i++){
+
+        int fd[2];
+
+        if(i < quantidade - 1){
+
+            if(pipe(fd) < 0){
+                perror("pipe");
+                return;
+            }
+        }
+
+        pid_t pid = fork();
+
+        if(pid < 0){
+
+            perror("fork");
+            return;
+        }
+
+        else if(pid == 0){
+
+            if(leitura_anterior != -1){
+
+                dup2(leitura_anterior,STDIN_FILENO);
+            }
+
+            if(i < quantidade - 1){
+
+                dup2(
+                    fd[1],
+                    STDOUT_FILENO
+                );
+            }
+
+            if(leitura_anterior != -1){
+                close(leitura_anterior);
+            }
+
+            if(i < quantidade - 1){
+                close(fd[0]);
+                close(fd[1]);
+            }
+
+            int indice = indices[i];
+
+            char *args[MAX_ARGS + 2];
+
+            args[0] = tarefas[indice].programa;
+
+            for(int j = 0;
+                j < tarefas[indice].qtd_argumentos; j++){
+
+                args[j + 1] =tarefas[indice].argumentos[j];
+            }
+
+            args[tarefas[indice].qtd_argumentos + 1] = NULL;
+
+            execvp(tarefas[indice].programa,args);
+            perror("execvp");
+            exit(1);
+        }
+
+        else{
+
+            pids[i] = pid;
+
+            if(leitura_anterior != -1){
+                close(leitura_anterior);
+            }
+
+            if(i < quantidade - 1){
+
+                close(fd[1]);
+
+                leitura_anterior = fd[0];
+            }
+        }
+    }
+
+    for(int i = 0; i < quantidade; i++){
+
+        waitpid(
+            pids[i],
+            NULL,
+            0
+        );
+    }
+}
 
 void executar_tarefa(Tarefa tarefas[], int qtd_tarefas){
     char *nome = strtok(NULL, " \t");
@@ -168,6 +285,12 @@ void executar_tarefa(Tarefa tarefas[], int qtd_tarefas){
         executar_paralelo(tarefas, qtd_tarefas);
         return;
     }
+
+    if(strcmp(nome, "pipe") == 0){
+
+    executar_pipe(tarefas,qtd_tarefas);
+    return;
+}
 
     int indice = buscar_tarefa(tarefas,qtd_tarefas,nome);
     if (indice ==-1){
