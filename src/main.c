@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <fcntl.h>
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
@@ -14,6 +15,9 @@ typedef struct {
     char programa[MAX_TEXTO];
     char argumentos[MAX_ARGS][MAX_TEXTO];
     int qtd_argumentos;
+    char entrada[MAX_TEXTO];
+    char saida[MAX_TEXTO];
+    int usar_append;
 } Tarefa;
 
 
@@ -36,6 +40,9 @@ void cadastrar_tarefa(Tarefa tarefas[], int *qtd_tarefas) {
     strcpy(tarefas[*qtd_tarefas].programa, programa);
 
     tarefas[*qtd_tarefas].qtd_argumentos = 0;
+    tarefas[*qtd_tarefas].entrada[0] = '\0';
+    tarefas[*qtd_tarefas].saida[0] = '\0';
+    tarefas[*qtd_tarefas].usar_append = 0;
 
     char *arg;
 
@@ -64,6 +71,81 @@ int buscar_tarefa(Tarefa tarefas[], int qtd_tarefas, char nome[]) {
     return -1;
 }
 
+
+void configurar_redirecionamento(Tarefa tarefas[], int qtd_tarefas, char tipo[]){
+    char *nome = strtok(NULL, " \t");
+    char *arquivo = strtok(NULL, " \t");
+
+    if(nome == NULL || arquivo == NULL){
+        printf("uso %s <tarefa> <arquivo>\n", tipo);
+        return;
+    }
+
+    int indice = buscar_tarefa(tarefas,qtd_tarefas,nome);
+
+    if(indice == -1){
+        printf("tarefa %s nao encontrada", nome);
+        return;
+    }
+
+    if(strcmp(tipo,"input") == 0){
+        strcpy(tarefas[indice].entrada,arquivo);
+    }
+    else if(strcmp(tipo, "output") == 0){
+        strcpy(tarefas[indice].saida, arquivo);
+        tarefas[indice].usar_append = 0;
+    }
+    else if(strcmp(tipo, "append") == 0){
+        strcpy(tarefas[indice].saida,arquivo);
+        tarefas[indice].usar_append = 1;
+    }
+}
+
+void aplicar_redirecionamentos(Tarefa tarefas[], int indice){
+    int fd;
+
+    if(tarefas[indice].entrada[0] != '\0'){
+
+        fd = open(tarefas[indice].entrada, O_RDONLY);
+
+        if(fd < 0){
+            perror("open");
+            exit(1);
+        }
+
+        dup2(fd,STDIN_FILENO);
+        close(fd);
+    }
+
+    if(tarefas[indice].saida[0] != '\0'){
+
+        if(tarefas[indice].usar_append){
+
+            fd = open(
+                tarefas[indice].saida,
+                O_WRONLY | O_CREAT | O_APPEND,
+                0644
+            );
+        }
+        else{
+
+            fd = open(
+                tarefas[indice].saida,
+                O_WRONLY | O_CREAT | O_TRUNC,
+                0644
+            );
+        }
+
+        if(fd < 0){
+            perror("open");
+            exit(1);
+        }
+
+        dup2(fd,STDOUT_FILENO);
+        close(fd);
+    }
+}
+
 void executar_indice(Tarefa tarefas[], int indice){
     
     pid_t pid = fork();
@@ -79,6 +161,8 @@ void executar_indice(Tarefa tarefas[], int indice){
             args[i+1]=tarefas[indice].argumentos[i];
         }
         args[tarefas[indice].qtd_argumentos+1] = NULL;
+
+        aplicar_redirecionamentos(tarefas,indice);
 
         execvp(tarefas[indice].programa,args);
         perror("execvp");
@@ -326,6 +410,21 @@ int main(void) {
 
         char *comando = strtok(linha, " \t");
 
+        if(strcmp(comando, "input") == 0){
+            configurar_redirecionamento(tarefas,qtd_tarefas,"input");
+            continue;
+        }
+
+        if(strcmp(comando, "output") == 0){
+            configurar_redirecionamento(tarefas,qtd_tarefas,"output");
+            continue;
+        }
+
+        if(strcmp(comando, "append") == 0){
+            configurar_redirecionamento(tarefas,qtd_tarefas,"append");
+            continue;
+        }
+
         if(strcmp(comando, "exit") == 0) {
             break;
         }
@@ -342,7 +441,6 @@ int main(void) {
             continue;
         }
     }
-
 
     return 0;
 }
