@@ -9,9 +9,6 @@
 #define MAX_TAREFAS 100
 #define MAX_ARGS 20
 #define MAX_TEXTO 256
-#define MAX_TAREFAS 100
-#define MAX_ARGS 20
-#define MAX_TEXTO 256
 #define MAX_JOBS 100
 
 typedef struct {
@@ -32,6 +29,10 @@ typedef struct {
     int ativo;
 } Job;
 
+
+int buscar_tarefa(Tarefa tarefas[], int qtd_tarefas, char nome[]);
+
+
 void cadastrar_tarefa(Tarefa tarefas[], int *qtd_tarefas) {
 
     char *nome = strtok(NULL, " \t");
@@ -39,6 +40,11 @@ void cadastrar_tarefa(Tarefa tarefas[], int *qtd_tarefas) {
 
     if(nome == NULL || programa == NULL) {
         printf("uso: task <nome> <programa> [argumentos...]\n");
+        return;
+    }
+
+    if(buscar_tarefa(tarefas, *qtd_tarefas, nome) != -1){
+        printf("tarefa '%s' ja cadastrada\n", nome);
         return;
     }
 
@@ -70,6 +76,8 @@ void cadastrar_tarefa(Tarefa tarefas[], int *qtd_tarefas) {
 
     (*qtd_tarefas)++;
 }
+
+
 int buscar_tarefa(Tarefa tarefas[], int qtd_tarefas, char nome[]) {
 
     for(int i = 0; i < qtd_tarefas; i++) {
@@ -111,6 +119,7 @@ void configurar_redirecionamento(Tarefa tarefas[], int qtd_tarefas, char tipo[])
         tarefas[indice].usar_append = 1;
     }
 }
+
 
 void aplicar_redirecionamentos(Tarefa tarefas[], int indice){
     int fd;
@@ -157,6 +166,7 @@ void aplicar_redirecionamentos(Tarefa tarefas[], int indice){
     }
 }
 
+
 void executar_indice(Tarefa tarefas[], int indice){
     
     pid_t pid = fork();
@@ -184,6 +194,7 @@ void executar_indice(Tarefa tarefas[], int indice){
     }
 }
 
+
 void executar_sequencial(Tarefa tarefas[], int qtd_tarefas){
 
     char *nome;
@@ -197,13 +208,17 @@ void executar_sequencial(Tarefa tarefas[], int qtd_tarefas){
 
         if(indice == -1){
             printf("tarefa '%s' nao encontrada\n", nome);
+            return;
         }
+
         executar_indice(tarefas,indice);
     }
+
     if(quantidade == 0){
         printf("uso: run sequential <tarefa1> <tarefa2> ...\n");
     }
 }
+
 
 void executar_paralelo(Tarefa tarefas[], int qtd_tarefas){
     char *nome;
@@ -217,6 +232,7 @@ void executar_paralelo(Tarefa tarefas[], int qtd_tarefas){
             printf("tarefa '%s' nao encontrada\n", nome);
             return;
         }
+
         pid_t pid = fork();
 
         if(pid<0){
@@ -229,7 +245,11 @@ void executar_paralelo(Tarefa tarefas[], int qtd_tarefas){
             for(int i = 0; i< tarefas[indice].qtd_argumentos; i++){
                 args[i + 1]= tarefas[indice].argumentos[i];
             }
+
             args[tarefas[indice].qtd_argumentos+1]= NULL;
+
+            aplicar_redirecionamentos(tarefas, indice);
+
             execvp(tarefas[indice].programa,args);
 
             perror("execvp");
@@ -238,12 +258,13 @@ void executar_paralelo(Tarefa tarefas[], int qtd_tarefas){
         else{
             waitpid(pid,NULL,0);
         }
-
     }
+
     if(quantidade == 0){
         printf("uso: run parallel <tarefa1> <tarefa2> ...\n");
     }
 }
+
 
 void executar_pipe(Tarefa tarefas[], int qtd_tarefas){
 
@@ -332,6 +353,8 @@ void executar_pipe(Tarefa tarefas[], int qtd_tarefas){
 
             args[tarefas[indice].qtd_argumentos + 1] = NULL;
 
+            aplicar_redirecionamentos(tarefas, indice);
+
             execvp(tarefas[indice].programa,args);
             perror("execvp");
             exit(1);
@@ -364,6 +387,7 @@ void executar_pipe(Tarefa tarefas[], int qtd_tarefas){
     }
 }
 
+
 void executar_tarefa(Tarefa tarefas[], int qtd_tarefas){
     char *nome = strtok(NULL, " \t");
 
@@ -376,6 +400,7 @@ void executar_tarefa(Tarefa tarefas[], int qtd_tarefas){
         executar_sequencial(tarefas, qtd_tarefas);
         return;
     }
+
     if(strcmp(nome, "parallel") ==0){
         executar_paralelo(tarefas, qtd_tarefas);
         return;
@@ -383,25 +408,29 @@ void executar_tarefa(Tarefa tarefas[], int qtd_tarefas){
 
     if(strcmp(nome, "pipe") == 0){
 
-    executar_pipe(tarefas,qtd_tarefas);
-    return;
-}
+        executar_pipe(tarefas,qtd_tarefas);
+        return;
+    }
 
     int indice = buscar_tarefa(tarefas,qtd_tarefas,nome);
+
     if (indice ==-1){
         printf("tarefa não encontrada\n");
         return;
     }
+
     executar_indice(tarefas,indice);    
 }
 
 
 void alterar_workdir(){
-    char *diretorio = strtok(NULL, " \n");
+    char *diretorio = strtok(NULL, " \t");
+
     if(diretorio == NULL){
         printf("uso: workdir <diretorio>\n");
         return;
     }
+
     if(chdir(diretorio) !=0){
         perror("chdir");
         return;
@@ -410,59 +439,76 @@ void alterar_workdir(){
 
 
 void iniciar_background(Tarefa tarefas[],int qtd_tarefas, Job jobs[], int *qtd_jobs, int *proximo_job_id){
- char *nome = strtok(NULL, " \t");
+    char *nome = strtok(NULL, " \t");
 
- if(nome == NULL){
-    printf("uso: start <tarefa>\n");
-    return;
- }
- int indice = buscar_tarefa(tarefas,qtd_tarefas,nome);
-
- if(indice ==-1){
-    printf("tarefa nao encontrada\n");
-    return;
-
- }
- if(*qtd_jobs >=MAX_JOBS){
-    printf("limite de jobs atingido\n");
-    return;
- }
- pid_t pid = fork();
-
- if(pid<0){
-    printf("erro ao criar processo\n");
-    return;
- }
- else if(pid == 0){
-    char *args[MAX_ARGS+2];
-    args[0] = tarefas[indice].programa;
-
-    for(int i=0; i<tarefas[indice].qtd_argumentos; i++){
-        args[i + 1] = tarefas[indice].argumentos[i];
+    if(nome == NULL){
+        printf("uso: start <tarefa>\n");
+        return;
     }
-    args[tarefas[indice].qtd_argumentos+1]=NULL;
-    aplicar_redirecionamentos(tarefas,indice);
-    execvp(tarefas[indice].programa,args);
-    perror("execvp");
-    exit(1);
- }
- else{
-    jobs[*qtd_jobs].id = *proximo_job_id;
-    jobs[*qtd_jobs].pid = pid;
 
-    strcpy(jobs[*qtd_jobs].tarefa,tarefas[indice].nome);
-    jobs[*qtd_jobs].ativo=1;
+    int indice = buscar_tarefa(tarefas,qtd_tarefas,nome);
 
-    printf("[%d] %d\n", jobs[*qtd_jobs].id,(int)pid);
-    (*qtd_jobs)++;
-    (*proximo_job_id)++;
- }
+    if(indice ==-1){
+        printf("tarefa nao encontrada\n");
+        return;
+    }
+
+    if(*qtd_jobs >=MAX_JOBS){
+        printf("limite de jobs atingido\n");
+        return;
+    }
+
+    pid_t pid = fork();
+
+    if(pid<0){
+        printf("erro ao criar processo\n");
+        return;
+    }
+    else if(pid == 0){
+        char *args[MAX_ARGS+2];
+
+        args[0] = tarefas[indice].programa;
+
+        for(int i=0; i<tarefas[indice].qtd_argumentos; i++){
+            args[i + 1] = tarefas[indice].argumentos[i];
+        }
+
+        args[tarefas[indice].qtd_argumentos+1]=NULL;
+
+        aplicar_redirecionamentos(tarefas,indice);
+
+        execvp(tarefas[indice].programa,args);
+
+        perror("execvp");
+        exit(1);
+    }
+    else{
+        jobs[*qtd_jobs].id = *proximo_job_id;
+        jobs[*qtd_jobs].pid = pid;
+
+        strcpy(jobs[*qtd_jobs].tarefa,tarefas[indice].nome);
+
+        jobs[*qtd_jobs].ativo=1;
+
+        printf("[%d] %d\n", jobs[*qtd_jobs].id,(int)pid);
+
+        (*qtd_jobs)++;
+        (*proximo_job_id)++;
+    }
 }
+
 
 void atualizar_jobs(Job jobs[], int qtd_jobs){
     for(int i = 0; i < qtd_jobs; i++){
+
         if(jobs[i].ativo == 1){
-            pid_t resultado = waitpid(jobs[i].pid,NULL,WNOHANG);
+
+            pid_t resultado = waitpid(
+                jobs[i].pid,
+                NULL,
+                WNOHANG
+            );
+
             if(resultado == jobs[i].pid){
                 jobs[i].ativo= 0;
             }
@@ -470,19 +516,31 @@ void atualizar_jobs(Job jobs[], int qtd_jobs){
     }
 }
 
+
 void listar_jobs(Job jobs[], int qtd_jobs){
+
     atualizar_jobs(jobs,qtd_jobs);
+
     for(int i =0; i<qtd_jobs;i++){
-        printf("[%d] %d %s %s\n",jobs[i].id,(int)jobs[i].pid,jobs[i].tarefa,jobs[i].ativo ? "executando" : "finalizado");
+
+        printf(
+            "[%d] %d %s %s\n",
+            jobs[i].id,
+            (int)jobs[i].pid,
+            jobs[i].tarefa,
+            jobs[i].ativo ? "executando" : "finalizado"
+        );
     }
 }
 
 
 int buscar_job(Job jobs[], int qtd_jobs, int id){
+
     for(int i = 0; i < qtd_jobs; i++){
-       if(jobs[i].id == id){
-        return i;
-       }
+
+        if(jobs[i].id == id){
+            return i;
+        }
     }
     
     return -1;
@@ -490,23 +548,41 @@ int buscar_job(Job jobs[], int qtd_jobs, int id){
 
 
 void esperar_job(Job jobs[], int qtd_jobs){
+
     char *texto_id = strtok(NULL, " \t");
+
     if(texto_id==NULL){
-        printf("uso: wait <jobId\n");
+        printf("uso: wait <jobId>\n");
+        return;
     }
+
     int id = atoi(texto_id);
-    int indice= buscar_job(jobs,qtd_jobs,id);
+
+    int indice= buscar_job(
+        jobs,
+        qtd_jobs,
+        id
+    );
+
     if(indice == -1){
         printf("job nao encontrado\n");
         return;
     }
+
     if(jobs[indice].ativo == 0){
         printf("job %d ja finalizado\n", id);
         return;
     }
-    waitpid(jobs[indice].pid,NULL,0);
+
+    waitpid(
+        jobs[indice].pid,
+        NULL,
+        0
+    );
+
     jobs[indice].ativo=0;
 }
+
 
 int main(int argc, char *argv[]) {
 
