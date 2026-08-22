@@ -459,9 +459,23 @@ void iniciar_background(Tarefa tarefas[],int qtd_tarefas, Job jobs[], int *qtd_j
  }
 }
 
+void atualizar_jobs(Job jobs[], int qtd_jobs){
+    for(int i = 0; i < qtd_jobs; i++){
+        if(jobs[i].ativo == 1){
+            pid_t resultado = waitpid(jobs[i].pid,NULL,WNOHANG);
+            if(resultado == jobs[i].pid){
+                jobs[i].ativo= 0;
+            }
+        }
+    }
+}
 
-
-
+void listar_jobs(Job jobs[], int qtd_jobs){
+    atualizar_jobs(jobs,qtd_jobs);
+    for(int i =0; i<qtd_jobs;i++){
+        printf("[%d] %d %s %s\n",jobs[i].id,(int)jobs[i].pid,jobs[i].tarefa,jobs[i].ativo ? "executando" : "finalizado");
+    }
+}
 
 
 
@@ -507,6 +521,11 @@ int main(void) {
             configurar_redirecionamento(tarefas,qtd_tarefas,"append");
             continue;
         }
+        if(strcmp(comando, "jobs") == 0){
+        listar_jobs(jobs,qtd_jobs);
+        continue;
+        }
+
 
         if(strcmp(comando, "exit") == 0) {
             break;
