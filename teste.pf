@@ -1,0 +1,5 @@
+task um /bin/echo UM
+task dois /bin/echo DOIS
+run sequential um dois
+exit
+
