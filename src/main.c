@@ -478,7 +478,35 @@ void listar_jobs(Job jobs[], int qtd_jobs){
 }
 
 
+int buscar_job(Job jobs[], int qtd_jobs, int id){
+    for(int i = 0; i < qtd_jobs; i++){
+       if(jobs[i].id == id){
+        return i;
+       }
+    }
+    
+    return -1;
+}
 
+
+void esperar_job(Job jobs[], int qtd_jobs){
+    char *texto_id = strtok(NULL, " \t");
+    if(texto_id==NULL){
+        printf("uso: wait <jobId\n");
+    }
+    int id = atoi(texto_id);
+    int indice= buscar_job(jobs,qtd_jobs,id);
+    if(indice == -1){
+        printf("job nao encontrado\n");
+        return;
+    }
+    if(jobs[indice].ativo == 0){
+        printf("job %d ja finalizado\n", id);
+        return;
+    }
+    waitpid(jobs[indice].pid,NULL,0);
+    jobs[indice].ativo=0;
+}
 
 int main(void) {
 
@@ -536,6 +564,10 @@ int main(void) {
             continue;
         }
 
+        if(strcmp(comando, "wait") == 0){
+            esperar_job(jobs,qtd_jobs);
+            continue;
+        }
 
         if(strcmp(comando, "workdir") == 0){
             alterar_workdir();
