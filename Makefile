@@ -1,8 +1,15 @@
-CC = cc
+CC = gcc
 CFLAGS = -Wall -Wextra -pedantic -std=c11
 
-processflow: src/main.c
-	$(CC) $(CFLAGS) src/main.c -o processflow
+TARGET = processflow
+SRC = src/main.c src/processflow.c
+
+all: $(TARGET)
+
+$(TARGET): $(SRC) src/processflow.h
+	$(CC) $(CFLAGS) $(SRC) -o $(TARGET)
 
 clean:
-	rm -f processflow
+	rm -f $(TARGET)
+
+.PHONY: all clean
