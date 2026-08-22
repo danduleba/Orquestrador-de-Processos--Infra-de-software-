@@ -385,6 +385,19 @@ void executar_tarefa(Tarefa tarefas[], int qtd_tarefas){
 }
 
 
+void alterar_workdir(){
+    char *diretorio = strtok(NULL, " \n");
+    if(diretorio == NULL){
+        printf("uso: workdir <diretorio>\n");
+        return;
+    }
+    if(chdir(diretorio) !=0){
+        perror("chdir");
+        return;
+    }
+}
+
+
 
 int main(void) {
 
@@ -429,6 +442,10 @@ int main(void) {
             break;
         }
 
+        if(strcmp(comando, "workdir") == 0){
+            alterar_workdir();
+            continue;
+        }
         if(strcmp(comando, "task") == 0) {
 
             cadastrar_tarefa(tarefas, &qtd_tarefas);
