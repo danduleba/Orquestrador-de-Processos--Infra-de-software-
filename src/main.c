@@ -9,6 +9,10 @@
 #define MAX_TAREFAS 100
 #define MAX_ARGS 20
 #define MAX_TEXTO 256
+#define MAX_TAREFAS 100
+#define MAX_ARGS 20
+#define MAX_TEXTO 256
+#define MAX_JOBS 100
 
 typedef struct {
     char nome[MAX_TEXTO];
@@ -20,6 +24,13 @@ typedef struct {
     int usar_append;
 } Tarefa;
 
+
+typedef struct {
+    int id;
+    pid_t pid;
+    char tarefa[MAX_TEXTO];
+    int ativo;
+} Job;
 
 void cadastrar_tarefa(Tarefa tarefas[], int *qtd_tarefas) {
 
@@ -398,6 +409,62 @@ void alterar_workdir(){
 }
 
 
+void iniciar_background(Tarefa tarefas[],int qtd_tarefas, Job jobs[], int *qtd_jobs, int *proximo_job_id){
+ char *nome = strtok(NULL, " \t");
+
+ if(nome == NULL){
+    printf("uso: start <tarefa>\n");
+    return;
+ }
+ int indice = buscar_tarefa(tarefas,qtd_tarefas,nome);
+
+ if(indice ==-1){
+    printf("tarefa nao encontrada\n");
+    return;
+
+ }
+ if(*qtd_jobs >=MAX_JOBS){
+    printf("limite de jobs atingido\n");
+    return;
+ }
+ pid_t pid = fork();
+
+ if(pid<0){
+    printf("erro ao criar processo\n");
+    return;
+ }
+ else if(pid == 0){
+    char *args[MAX_ARGS+2];
+    args[0] = tarefas[indice].programa;
+
+    for(int i=0; i<tarefas[indice].qtd_argumentos; i++){
+        args[i + 1] = tarefas[indice].argumentos[i];
+    }
+    args[tarefas[indice].qtd_argumentos+1]=NULL;
+    aplicar_redirecionamentos(tarefas,indice);
+    execvp(tarefas[indice].programa,args);
+    perror("execvp");
+    exit(1);
+ }
+ else{
+    jobs[*qtd_jobs].id = *proximo_job_id;
+    jobs[*qtd_jobs].pid = pid;
+
+    strcpy(jobs[*qtd_jobs].tarefa,tarefas[indice].nome);
+    jobs[*qtd_jobs].ativo=1;
+
+    printf("[%d] %d\n", jobs[*qtd_jobs].id,(int)pid);
+    (*qtd_jobs)++;
+    (*proximo_job_id)++;
+ }
+}
+
+
+
+
+
+
+
 
 int main(void) {
 
@@ -405,6 +472,9 @@ int main(void) {
 
     Tarefa tarefas[MAX_TAREFAS];
     int qtd_tarefas = 0;
+    Job jobs[MAX_JOBS];
+    int qtd_jobs = 0;
+    int proximo_job_id = 1;
 
     while(1) {
 
@@ -441,6 +511,12 @@ int main(void) {
         if(strcmp(comando, "exit") == 0) {
             break;
         }
+
+        if(strcmp(comando, "start") == 0){
+            iniciar_background(tarefas,qtd_tarefas,jobs,&qtd_jobs,&proximo_job_id);
+            continue;
+        }
+
 
         if(strcmp(comando, "workdir") == 0){
             alterar_workdir();
