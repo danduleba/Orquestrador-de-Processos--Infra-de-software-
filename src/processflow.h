@@ -40,5 +40,5 @@ void atualizar_jobs(Job jobs[], int qtd_jobs);
 void listar_jobs(Job jobs[], int qtd_jobs);
 int buscar_job(Job jobs[], int qtd_jobs, int id);
 void esperar_job(Job jobs[], int qtd_jobs);
-
+int copiar_texto(char destino[], const char origem[]);
 #endif

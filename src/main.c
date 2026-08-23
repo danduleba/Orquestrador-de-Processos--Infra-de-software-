@@ -57,7 +57,7 @@ int main(int argc, char *argv[]) {
         }
 
 
-        linha[strcspn(linha, "\n")] = '\0';
+        linha[strcspn(linha, "\r\n")] = '\0';
 
 
         if(modo_workflow){
@@ -74,6 +74,9 @@ int main(int argc, char *argv[]) {
 
         char *comando = strtok(linha, " \t");
 
+        if(comando == NULL){
+        continue;
+        }
 
         if(strcmp(comando, "input") == 0){
 
