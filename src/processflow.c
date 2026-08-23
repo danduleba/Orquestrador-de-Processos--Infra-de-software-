@@ -5,8 +5,25 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <errno.h>
+#include <limits.h>
 
 #include "processflow.h"
+
+
+int copiar_texto(char destino[], const char origem[]) {
+
+    size_t tamanho = strlen(origem);
+
+    if(tamanho >= MAX_TEXTO){
+        printf("texto muito longo\n");
+        return 0;
+    }
+
+    memcpy(destino, origem, tamanho + 1);
+
+    return 1;
+}
 
 
 void cadastrar_tarefa(Tarefa tarefas[], int *qtd_tarefas) {
@@ -29,24 +46,33 @@ void cadastrar_tarefa(Tarefa tarefas[], int *qtd_tarefas) {
         return;
     }
 
-    strcpy(tarefas[*qtd_tarefas].nome, nome);
-    strcpy(tarefas[*qtd_tarefas].programa, programa);
+    Tarefa nova_tarefa = {0};
 
-    tarefas[*qtd_tarefas].qtd_argumentos = 0;
-    tarefas[*qtd_tarefas].entrada[0] = '\0';
-    tarefas[*qtd_tarefas].saida[0] = '\0';
-    tarefas[*qtd_tarefas].usar_append = 0;
+    if(!copiar_texto(nova_tarefa.nome, nome) ||
+       !copiar_texto(nova_tarefa.programa, programa)){
+        return;
+    }
 
     char *arg;
 
     while((arg = strtok(NULL, " \t")) != NULL) {
 
-        if(tarefas[*qtd_tarefas].qtd_argumentos < MAX_ARGS) {
-
-            strcpy(tarefas[*qtd_tarefas].argumentos[tarefas[*qtd_tarefas].qtd_argumentos], arg);
-            tarefas[*qtd_tarefas].qtd_argumentos++;
+        if(nova_tarefa.qtd_argumentos >= MAX_ARGS) {
+            printf("limite de argumentos atingido\n");
+            return;
         }
+
+        if(!copiar_texto(
+            nova_tarefa.argumentos[nova_tarefa.qtd_argumentos],
+            arg
+        )){
+            return;
+        }
+
+        nova_tarefa.qtd_argumentos++;
     }
+
+    tarefas[*qtd_tarefas] = nova_tarefa;
 
     printf("tarefa '%s' cadastrada\n", nome);
 
@@ -80,25 +106,28 @@ void configurar_redirecionamento(Tarefa tarefas[], int qtd_tarefas, char tipo[])
     int indice = buscar_tarefa(tarefas, qtd_tarefas, nome);
 
     if(indice == -1){
-        printf("tarefa %s nao encontrada", nome);
+        printf("tarefa %s nao encontrada\n", nome);
         return;
     }
 
     if(strcmp(tipo, "input") == 0){
-        strcpy(tarefas[indice].entrada, arquivo);
+        copiar_texto(tarefas[indice].entrada, arquivo);
     }
 
     else if(strcmp(tipo, "output") == 0){
-        strcpy(tarefas[indice].saida, arquivo);
-        tarefas[indice].usar_append = 0;
+
+        if(copiar_texto(tarefas[indice].saida, arquivo)){
+            tarefas[indice].usar_append = 0;
+        }
     }
 
     else if(strcmp(tipo, "append") == 0){
-        strcpy(tarefas[indice].saida, arquivo);
-        tarefas[indice].usar_append = 1;
+
+        if(copiar_texto(tarefas[indice].saida, arquivo)){
+            tarefas[indice].usar_append = 1;
+        }
     }
 }
-
 
 void aplicar_redirecionamentos(Tarefa tarefas[], int indice) {
 
@@ -555,7 +584,18 @@ void esperar_job(Job jobs[], int qtd_jobs) {
         return;
     }
 
-    int id = atoi(texto_id);
+    char *fim;
+    long valor;
+
+    errno = 0;
+    valor = strtol(texto_id, &fim, 10);
+
+    if(errno == ERANGE || *fim != '\0' || valor < 1 || valor > INT_MAX){
+        printf("jobId invalido\n");
+        return;
+    }
+
+    int id = (int)valor;
 
     int indice = buscar_job(jobs, qtd_jobs, id);
 
@@ -573,4 +613,3 @@ void esperar_job(Job jobs[], int qtd_jobs) {
 
     jobs[indice].ativo = 0;
 }
-
