@@ -244,13 +244,14 @@ void executar_paralelo(Tarefa tarefas[], int qtd_tarefas) {
     int indices[MAX_TAREFAS];
     pid_t pids[MAX_TAREFAS];
 
-    if(quantidade >= MAX_TAREFAS){
-    printf("limite de tarefas por comando atingido\n");
-    return;
-}
+
 
     while((nome = strtok(NULL, " \t")) != NULL){
-
+        
+        if(quantidade >= MAX_TAREFAS){
+         printf("limite de tarefas por comando atingido\n");
+         return;
+        } 
         int indice = buscar_tarefa(tarefas, qtd_tarefas, nome);
 
         if(indice == -1){
@@ -319,13 +320,13 @@ void executar_pipe(Tarefa tarefas[], int qtd_tarefas) {
 
     char *nome;
 
-    if(quantidade >= MAX_TAREFAS){
-    printf("limite de tarefas por comando atingido\n");
-    return;
-}
+ 
 
     while((nome = strtok(NULL, " \t")) != NULL){
-
+         if(quantidade >= MAX_TAREFAS){
+            printf("limite de tarefas por comando atingido\n");
+            return;
+        }
         int indice = buscar_tarefa(tarefas, qtd_tarefas, nome);
 
         if(indice == -1){
